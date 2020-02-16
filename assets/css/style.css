@@ -258,7 +258,7 @@ img {
 }
 
 .fixed-top {
-    position: fixed;
+    position:sticky;
     z-index: 1030;
     right: 0;
     left: 0;
@@ -437,7 +437,7 @@ img {
     -webkit-transition: all .3s ease 0s;
     -o-transition: all .3s ease 0s;
     transition:all .3s ease 0s ;
-    
+
 }
 
 .feature-block:hover .feature-icon-block{
@@ -761,7 +761,3 @@ img {
     margin: 30px 0px 20px;
     font-size: 22px;
 }
-
-
-
-

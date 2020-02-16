@@ -12,6 +12,30 @@ class VLM extends CI_Controller {
 	{
 		$this->load->template('index');
 	}
+	public function profil($id)
+	{
+		$data['profil'] = $this->model_user->profil($id);
+		$this->load->template('profil',$data);
+	}
+	public function upload($id)
+	{
+		$config['upload_path'] = './assets/profil/';
+		$config['allowed_types'] = 'jpg|png|jpeg';
+		$config['max_size']  = '0';
+		$config['remove_space'] = TRUE;
+		$this->upload->initialize($config);
+		$this->load->library('upload', $config); // Load konfigurasi uploadnya
+		if($this->upload->do_upload('gambar')){ // Lakukan upload dan Cek jika proses upload berhasil
+			// Jika berhasil :
+			$file=$this->upload->data();
+			$this->model_user->simpan($file,$id);
+			redirect('/');
+			// echo "Berhasil";
+		}else{
+			// Jika gagal :
+			echo "Gagal";
+		}
+		}
 	public function login_page()
 	{
 		$data['cek']= "0";

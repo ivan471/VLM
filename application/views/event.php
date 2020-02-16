@@ -27,30 +27,28 @@
       </center>
     <?php endif; ?>
     <!-- </form> -->
-    <div class="card mt-3">
+    <div class="shadow card mt-3">
       <div class="card-header">
         <h2>Daftar Event</h2>
       </div>
       <div class="card-body">
-        <div class="row mt-3">
-          <?php $id=0;
-          foreach ($event as $k): ?>
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <input type="hidden" id="id" value="<?= $id; ?>">
+        <div class="row">
+          <?php foreach ($event as $k): ?>
+          <div class="col-md-4">
+            <div class="shadow card">
               <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" width="100%" height="1080px"class="card-img-top view-gmbr gmbr1">
               <div class="card-body">
                 <div style="overflow-y:scroll;height:100px;">
                   <p><?= $k['deskripsi'] ?></p>
                 </div>
                 <?php if ($this->session->status == '1'): ?>
-                  <a href="<?= base_url().'edit/'.$k['id'] ?>" class="btn btn-primary">Edit</a>
-                  <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="btn btn-danger">Hapus</a>
+                  <a href="<?= base_url().'edit/'.$k['id'] ?>" class="btn btn-primary float-left">Edit</a>
+                  <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="btn btn-danger float-right">Hapus</a>
                 <?php endif; ?>
               </div>
             </div>
           </div>
-          <?php $id++; endforeach; ?>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>

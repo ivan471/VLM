@@ -30,45 +30,30 @@
             Kegiatan
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <form class="" action="index.html" method="post">
-              <a class="dropdown-item" href="<?= base_url().'sembahyang' ?>">
-                Sembahyang
-              </a>
-            </form>
-            <form class="" action="index.html" method="post">
-              <a class="dropdown-item" href="<?= base_url().'event' ?>">
-                Event
-              </a>
-            </form>
-            <a class="dropdown-item" href="#">Member</a>
-            <form class="" action="index.html" method="post">
-              <a class="dropdown-item" href="#">
-                belajar
-              </a>
-            </form>
-
+            <a class="dropdown-item" href="<?= base_url().'sembahyang' ?>">Sembahyang</a>
+            <a class="dropdown-item" href="<?= base_url().'event' ?>">Event</a>
+            <a class="dropdown-item" href="<?= base_url().'members' ?>">Member</a>
+            <a class="dropdown-item" href="#">Belajar</a>
           </div>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#pricing">
-            PDF
-          </a>
         </li>
         <?php if (!isset($this->session->uid)){ ?>
           <li class="nav-item ">
             <a class="nav-link js-scroll-trigger" href="<?= base_url().'login_page' ?>">
-              Login Akun
+              <i class="fas fa-sign-in-alt"></i> Login Akun
             </a>
           </li>
         <?php }else {?>
-        <li class="nav-item ">
-          <a class="nav-link js-scroll-trigger" href="<?= base_url().'logout' ?>">
-            Logout Akun
-          </a>
-        </li>
-      <?php } ?>
+          <li class="nav-item ">
+            <a class="nav-link js-scroll-trigger" href="<?= base_url().'logout' ?>">
+              <i class="fas fa-sign-out-alt"></i> Logout Akun
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link js-scroll-trigger" href="<?= base_url().'profil/'.$this->session->uid ?>">
+              <i class="fas fa-user"></i> Profil
+            </a>
+          </li>
+        <?php } ?>
       </ul>
     </div>
     <!-- / .navbar-collapse -->
