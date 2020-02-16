@@ -6,6 +6,7 @@ $route['event'] = 'Event';
 $route['login_page'] = 'VLM/login_page';
 $route['register_page'] = 'VLM/register_page';
 $route['sign_in'] = 'VLM/signin';
+$route['req'] = 'VLM/req';
 $route['logout'] = 'VLM/logout';
 $route['member'] = 'Member';
 $route['simpan'] = 'Event/gambar';
