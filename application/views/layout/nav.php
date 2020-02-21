@@ -16,6 +16,11 @@
       <!-- Links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
+          <a class="nav-link" href="<?= base_url(); ?>">
+            Halaman Utama
+          </a>
+        </li>
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Tentang Vihara
           </a>
@@ -32,7 +37,9 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="<?= base_url().'sembahyang' ?>">Sembahyang</a>
             <a class="dropdown-item" href="<?= base_url().'event' ?>">Event</a>
+            <?php if ($this->session->status == '1') { ?>
             <a class="dropdown-item" href="<?= base_url().'members' ?>">Member</a>
+          <?php } ?>
             <a class="dropdown-item" href="#">Belajar</a>
           </div>
         </li>
@@ -43,15 +50,14 @@
             </a>
           </li>
         <?php }else {?>
-          <li class="nav-item ">
-            <a class="nav-link js-scroll-trigger" href="<?= base_url().'logout' ?>">
-              <i class="fas fa-sign-out-alt"></i> Logout Akun
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <?= $this->session->nama ?>
             </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link js-scroll-trigger" href="<?= base_url().'profil/'.$this->session->uid ?>">
-              <i class="fas fa-user"></i> Profil
-            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="<?= base_url().'profil/'.$this->session->uid ?>">Profil</a>
+              <a class="dropdown-item" href="<?= base_url().'logout' ?>">Logout</a>
+            </div>
           </li>
         <?php } ?>
       </ul>

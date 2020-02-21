@@ -56,6 +56,7 @@ class VLM extends CI_Controller {
 			// simpan data session untuk mengenali user di setiap halaman
 			$this->session->uid = $user['id_user'];
 			$this->session->status = $user['status'];
+			$this->session->nama = $user['nama'];
 			// kembali ke halaman depan
 			redirect('/', $data);
 		} else {
