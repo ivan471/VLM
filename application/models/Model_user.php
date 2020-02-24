@@ -16,6 +16,10 @@ class Model_user extends CI_Model{
     $query = $this->db->query("SELECT * FROM users WHERE status='2'");
     return $query->result_array();
   }
+  public function data_admin(){
+    $query = $this->db->query("SELECT * FROM users WHERE status='1'");
+    return $query->result_array();
+  }
   public function register(){
     $data = [
       'nama' => $this->input->post('nama'),

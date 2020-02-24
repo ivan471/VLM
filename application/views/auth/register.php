@@ -1,7 +1,7 @@
-<section class="section" id="feature">
+<!-- <section class="section" id="feature"> -->
 	<div class="container">
 		<center>
-			<div class="col-md-8 mt-5">
+			<div class="col-md-8 mt-5 mb-5">
 				<?php if ($cek == "1"): ?>
 					<div class="alert alert-danger" role="alert">
 						Password tidak sama!! Silakan cek kembali.
@@ -75,4 +75,4 @@
 			</div>
 		</center>
 	</div>
-</section>
+<!-- </section> -->

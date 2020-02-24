@@ -11,7 +11,7 @@
 
 /* Medium Devices, Desktops */
 @media (min-width : 992px) {
-	
+
 
 }
 
@@ -24,28 +24,28 @@
         padding: 10px 10px;
          border-radius: 0px;
     }
-    
+
     .navbar-nav{
-        background: #000;
+        background: #fff;
     }
-    
+
     .navbar-light .navbar-nav{
         background: #fff;
     }
-    
+
    .navbar-light .navbar-toggler-icon-bar{
        background: #fff;
        height: auto;
     }
-    
+
 /*================
      FEATURE
     =========================*/
-    
+
     .feature-block{
         margin-bottom: 40px;
     }
-    
+
     .about-img,.about-content-2,.footer-link{
         margin-bottom: 30px;
     }
@@ -62,35 +62,35 @@
         padding: 10px 10px;
          border-radius: 0px;
     }
-    
+
     .navbar-nav{
         background: #000;
     }
-    
+
     .navbar-light .navbar-nav{
         background: #fff;
     }
-    
+
    .navbar-light .navbar-toggler-icon-bar{
        background: #fff;
        height: auto;
     }
-    
+
 /*================
      FEATURE
     =========================*/
-    
+
     .feature-block{
         margin-bottom: 40px;
     }
-    
+
     .about-img,.about-content-2,.footer-link{
         margin-bottom: 30px;
     }
-	
+
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media (min-width : 480px) and (max-width:767px){
 
     .navbar-light .navbar-toggler {
@@ -99,34 +99,34 @@
         padding: 10px 10px;
          border-radius: 0px;
     }
-    
+
     .navbar-nav{
         background: #000;
     }
-    
+
     .navbar-light .navbar-nav{
         background: #fff;
     }
-    
+
    .navbar-light .navbar-toggler-icon-bar{
        background: #fff;
        height: auto;
     }
-    
+
 /*================
      FEATURE
     =========================*/
-    
+
     .feature-block{
         margin-bottom: 40px;
     }
-    
+
     .about-img,.about-content-2,.footer-link{
         margin-bottom: 30px;
     }
 
-    
-    
+
+
     .pricing-block{
         margin-bottom: 20px;
         margin-top: 30px;
@@ -134,7 +134,7 @@
 
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media (min-width : 320px) and (max-width: 478px)  {
 
     .navbar-light .navbar-toggler {
@@ -143,33 +143,33 @@
         padding: 10px 10px;
         border-radius: 0px;
     }
-    
+
     .navbar-nav{
         background: #000;
     }
-    
+
     .navbar-light .navbar-nav{
         background: #fff;
     }
-    
+
    .navbar-light .navbar-toggler-icon-bar{
         background: #fff;
        height: auto;
     }
-    
+
 /*================
      FEATURE
     =========================*/
-    
+
     .feature-block{
         margin-bottom: 40px;
     }
-    
+
     .about-img,.about-content-2,.footer-link{
         margin-bottom: 30px;
     }
 
-    
+
     .pricing-block{
         margin-bottom: 30px;
         margin-top: 30px;

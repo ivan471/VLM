@@ -10,7 +10,7 @@
     <!-- <form class="was-validated" action="" method="post"> -->
     <?php if ($this->session->status == '1'): ?>
       <center>
-        <div class="col-md-6 mb-3 mb-md-0">
+        <div class="col-md-8 mb-3 mb-md-0">
           <div class="card text-center">
             <div class="card-header">
               <h3>Input Event</h3>
@@ -19,7 +19,7 @@
               <form class="" action="<?= base_url().'simpan' ?>" method="post" enctype="multipart/form-data">
                 <input class="mb-2" type="file" name="foto" value="">
                 <textarea class="form-control mb-2" name="deskripsi" placeholder="Masukkan Informasi Event" required></textarea>
-                <button type="submit" class="btn btn-success mb-2">Simpan</button>
+                <button type="submit" class="btn simpan mb-2">Simpan</button>
               </form>
             </div>
           </div>
@@ -34,9 +34,11 @@
       <div class="card-body">
         <div class="row">
           <?php foreach ($event as $k): ?>
-          <div class="col-md-4">
+          <div class="col-md-4 mb-3">
             <div class="shadow card">
-              <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" width="100%" height="1080px"class="card-img-top view-gmbr gmbr1">
+              <div class="bingkai-gambar">
+                <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" class="responsive gmbr1">
+              </div>
               <div class="card-body">
                 <div style="overflow-y:scroll;height:100px;">
                   <p><?= $k['deskripsi'] ?></p>

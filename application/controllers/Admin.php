@@ -10,7 +10,8 @@ class Admin extends CI_Controller {
 
 	public function add_admin(){
 		if ($this->session->status == '1') {
-			$this->load->template('admin/add_admin');
+			$data['list'] = $this->model_user->data_admin();
+			$this->load->template('admin/list_admin', $data);
 		}
 	}
 	function save(){

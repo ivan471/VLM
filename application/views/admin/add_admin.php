@@ -3,7 +3,7 @@
 		<div class="col-md-8 mx-auto">
 			<div class="card">
 				<div class="card-header">
-					<h3>Daftar Akun Admin Baru</h3>
+					<h3>Tambah Akun Admin Baru</h3>
 				</div>
 				<div class="card-body">
 					<form class="" action="<?= base_url().'save' ?>" method="post">
@@ -27,7 +27,7 @@
 							<label for="exampleInputPassword1">Umur</label>
 							<input type="number" class="form-control" name="umur" id="exampleInputPassword1" required>
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary">Simpan</button>
 					</form>
 				</div>
 			</div>

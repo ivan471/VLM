@@ -5,17 +5,17 @@
   <div class="bg-overlay"></div>
   <!-- / .container -->
 </section>
-<section class="section mt-5" id="feature">
+<section class="section" id="feature">
   <?php if ($this->session->status == '1'){ ?>
     <center>
-      <div class="container">
-        <div class="col-md-6">
+      <div class="container mb-5">
+        <div class="col-md-8 card px-auto pb-5 pt-5 px-5">
           <form action="<?= base_url().'simpan_pemberitahuan' ?>" method="post">
             <div class="form-group">
-              <label for="exampleInputEmail1">Isi Pemberitahuan</label>
-              <textarea role="3" class="form-control" aria-describedby="emailHelp" name="pemberitahuan" placeholder="Isi Pemberitahuan" required></textarea>
+              <label for="pemberitahuan">Isi Pemberitahuan</label>
+              <textarea role="3" id="pemberitahuan" class="form-control" aria-describedby="emailHelp" name="pemberitahuan" placeholder="Isi Pemberitahuan" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn simpan">Simpan</button>
           </form>
         </div>
       </div>
