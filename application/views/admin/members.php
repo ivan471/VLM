@@ -1,11 +1,19 @@
 <section class="section" id="feature">
 	<div class="container">
-		<div class="col-md-10 mx-auto">
+		<div class="col-md-12 mx-auto">
 			<div class="card">
 				<div class="card-header">
 					<h3>Daftar Member</h3>
 				</div>
 				<div class="card-body">
+					<div class="search-members">
+						<form class="" action="index.html" method="post">
+							<div class="form-group">
+								<input type="text" name="search" class="input" value="">
+								<button type="submit" class="btn btn-grad">Cari Members</button>
+							</div>
+						</form>
+					</div>
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -16,6 +24,7 @@
 								<th scope="col">E-mail</th>
 								<th scope="col">Umur</th>
 								<th scope="col">No WA</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -28,6 +37,7 @@
 								<td><?= $m['email'] ?></td>
 								<td><?= $m['umur'] ?></td>
 								<td><?= $m['no_hp'] ?></td>
+								<td><a href="<?= base_url().'perubahan/'.$m['id_user']?>" class="btn-grad">Perubahan Status</a></td>
 							</tr>
 						<?php $i++; endforeach; ?>
 						</tbody>
