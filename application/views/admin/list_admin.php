@@ -9,6 +9,7 @@
 			<div class="card-body">
 				<div class="col-md-8">
 					<h3 class="mb-3">Daftar Admin</h3>
+					<a href="#" class="btn">Tambah Akun Admin</a>
 					<table class="table table-striped">
 						<thead>
 							<tr>

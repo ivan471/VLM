@@ -9,7 +9,7 @@
 					<div class="search-members">
 						<form class="" action="index.html" method="post">
 							<div class="form-group">
-								<input type="text" name="search" class="input" value="">
+								<input type="text" name="keyword" class="input" value="">
 								<button type="submit" class="btn btn-grad">Cari Members</button>
 							</div>
 						</form>
@@ -42,6 +42,7 @@
 						<?php $i++; endforeach; ?>
 						</tbody>
 					</table>
+					<?= $pagination; ?>
 				</div>
 			</div>
 		</div>

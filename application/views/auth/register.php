@@ -54,6 +54,12 @@
 						</div> <!-- form-group// -->
 						<div class="form-group input-group">
 							<div class="input-group-prepend">
+								<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+							</div>
+							<input type="radio" name="" value="">
+						</div> <!-- form-group// -->
+						<div class="form-group input-group">
+							<div class="input-group-prepend">
 								<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 							</div>
 							<input class="form-control" name="password" placeholder="Create password" type="password">

@@ -10,6 +10,7 @@ class VLM extends CI_Controller {
 
 	public function index()
 	{
+		$this->model_user->tambah_umur();
 		$this->load->template('index');
 	}
 	public function profil($id)
