@@ -27,8 +27,8 @@
         <h2>Daftar Pemberitahuan Sembahyang</h2>
       </div>
       <div class="card-body">
-        <?php foreach ($pemberitahuan as $v): ?>
-          <div class="row">
+        <div class="row">
+          <?php foreach ($pemberitahuan as $v): ?>
             <div class="col-md-4">
               <div class="card">
                 <div class="card-body">
@@ -36,13 +36,13 @@
                 </div>
                 <div class="card-footer text-muted">
                   <center>
-                  <?= tgl_indo($v['tanggal']); ?>
-                </center>
+                    <?= tgl_indo($v['tanggal']); ?>
+                  </center>
                 </div>
               </div>
             </div>
-          </div>
-        <?php endforeach; ?>
+          <?php endforeach; ?>
+        </div>
       </div>
     </div>
   </div>

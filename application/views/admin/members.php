@@ -7,10 +7,10 @@
 				</div>
 				<div class="card-body">
 					<div class="search-members">
-						<form class="" action="index.html" method="post">
+						<form class="" action="<?= base_url('member') ?>" method="post" enctype="multipart/form-data">
 							<div class="form-group">
 								<input type="text" name="keyword" class="input" value="">
-								<button type="submit" class="btn btn-grad">Cari Members</button>
+								<input type="submit" name="submit" class="btn btn-grad" value="Cari Members">
 							</div>
 						</form>
 					</div>
@@ -37,7 +37,7 @@
 								<td><?= $m['email'] ?></td>
 								<td><?= $m['umur'] ?></td>
 								<td><?= $m['no_hp'] ?></td>
-								<td><a href="<?= base_url().'perubahan/'.$m['id_user']?>" class="btn-grad">Perubahan Status</a></td>
+								<td><a href="<?= base_url().'perubahan/'.$m['id_user']?>" class="btn btn-grad">Perubahan Status</a></td>
 							</tr>
 						<?php $i++; endforeach; ?>
 						</tbody>

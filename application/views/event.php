@@ -18,6 +18,17 @@
             <div class="card-body">
               <form class="" action="<?= base_url().'simpan' ?>" method="post" enctype="multipart/form-data">
                 <input class="mb-2" type="file" name="foto" value="">
+                <label for="">Pilihan Umur</label>
+                <input type="radio" name="umur" value="1" onclick="javascript:Check();" id="semua" checked>
+                <label for="semua">Semua Umur</label>
+                <input type="radio" name="umur" value="2" onclick="javascript:Check();" id="antara">
+                <label for="antara">Pilihan Umur</label>
+                <div id="pilihan" style="display:none">
+                  <label for="umur1">Dari Umur</label>
+                  <input type="number" name="umur1" value="">
+                  <label for="umur2" class="mr-2 ml-2">Sampai Umur</label>
+                  <input type="number" name="umur2" value="">
+                </div>
                 <textarea class="form-control mb-2" name="deskripsi" placeholder="Masukkan Informasi Event" required></textarea>
                 <button type="submit" class="btn simpan mb-2">Simpan</button>
               </form>
@@ -34,22 +45,22 @@
       <div class="card-body">
         <div class="row">
           <?php foreach ($event as $k): ?>
-          <div class="col-md-4 mb-3">
-            <div class="shadow card">
-              <div class="bingkai-gambar">
-                <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" class="responsive gmbr1">
-              </div>
-              <div class="card-body">
-                <div style="overflow-y:scroll;height:100px;">
-                  <p><?= $k['deskripsi'] ?></p>
+            <div class="col-md-4 mb-3">
+              <div class="shadow card">
+                <div class="bingkai-gambar">
+                  <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" class="responsive gmbr1">
                 </div>
-                <?php if ($this->session->status == '1'): ?>
-                  <a href="<?= base_url().'edit/'.$k['id'] ?>" class="btn btn-primary float-left">Edit</a>
-                  <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="btn btn-danger float-right">Hapus</a>
-                <?php endif; ?>
+                <div class="card-body">
+                  <div style="overflow-y:scroll;height:100px;">
+                    <p><?= $k['deskripsi'] ?></p>
+                  </div>
+                  <?php if ($this->session->status == '1'): ?>
+                    <a href="<?= base_url().'edit/'.$k['id'] ?>" class="btn btn-primary float-left">Edit</a>
+                    <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="btn btn-danger float-right">Hapus</a>
+                  <?php endif; ?>
+                </div>
               </div>
             </div>
-          </div>
           <?php endforeach; ?>
         </div>
       </div>
@@ -80,5 +91,14 @@ var span = document.getElementById("close");
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+}
+</script>
+<script type="text/javascript">
+function Check() {
+  if (document.getElementById('antara').checked) {
+    document.getElementById('pilihan').style.display = 'block';
+  } else {
+    document.getElementById('pilihan').style.display = 'none';
+  }
 }
 </script>

@@ -23,6 +23,19 @@
 							<label for="exampleInputPassword1">Tempat Lahir</label>
 							<input type="text" class="form-control" name="tmpt_lahir" id="exampleInputPassword1" required>
 						</div>
+						<div class="form-group input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"> <i class="fas fa-venus-mars"></i> </span>
+							</div>
+							<div class="ml-3 form-check form-check-inline">
+								<input type="radio" class="form-check-input" name="jk" value="Pria" id="pria" required>
+								<label for="pria" class="mt-2" style="font-size:18px;">Pria</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input type="radio" class="form-check-input" name="jk" value="Wanita" id="wanita" required>
+								<label for="wanita" class="mt-2" style="font-size:18px;">Wanita</label>
+							</div>
+						</div> <!-- form-group// -->
 						<div class="form-group">
 							<label for="exampleInputPassword1">Umur</label>
 							<input type="number" class="form-control" name="umur" id="exampleInputPassword1" required>

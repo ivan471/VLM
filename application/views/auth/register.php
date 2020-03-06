@@ -54,9 +54,16 @@
 						</div> <!-- form-group// -->
 						<div class="form-group input-group">
 							<div class="input-group-prepend">
-								<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+								<span class="input-group-text"> <i class="fas fa-venus-mars"></i> </span>
 							</div>
-							<input type="radio" name="" value="">
+							<div class="ml-3 form-check form-check-inline">
+								<input type="radio" class="form-check-input" name="jk" value="Pria" id="pria" required>
+								<label for="pria" class="mt-2" style="font-size:18px;">Pria</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input type="radio" class="form-check-input" name="jk" value="Wanita" id="wanita" required>
+								<label for="wanita" class="mt-2" style="font-size:18px;">Wanita</label>
+							</div>
 						</div> <!-- form-group// -->
 						<div class="form-group input-group">
 							<div class="input-group-prepend">

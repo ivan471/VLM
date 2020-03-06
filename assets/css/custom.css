@@ -120,11 +120,6 @@ body{
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dbd0d0",endColorstr="#9af8ff",GradientType=1);
 }
 .simpan{
-  /* background: rgb(62,121,188);
-  background: -moz-linear-gradient(84deg, rgba(62,121,188,1) 4%, rgba(175,224,224,1) 100%);
-  background: -webkit-linear-gradient(84deg, rgba(62,121,188,1) 4%, rgba(175,224,224,1) 100%);
-  background: linear-gradient(84deg, rgba(62,121,188,1) 4%, rgba(175,224,224,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3e79bc",endColorstr="#afe0e0",GradientType=1); */
   background: rgb(77,188,62);
   background: -moz-linear-gradient(84deg, rgba(77,188,62,1) 4%, rgba(106,231,118,1) 100%);
   background: -webkit-linear-gradient(84deg, rgba(77,188,62,1) 4%, rgba(106,231,118,1) 100%);

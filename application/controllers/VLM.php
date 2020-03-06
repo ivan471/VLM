@@ -71,7 +71,7 @@ class VLM extends CI_Controller {
 		if ($pass == $pass1) {
 			$this->model_user->register();
 			$data['cek']= "2";
-			$this->load->template('auth/register_page',$data);
+			$this->load->template('auth/register',$data);
 		}else {
 			$data['cek']= "1";
 			redirect('/register_page');

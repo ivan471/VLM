@@ -3,9 +3,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 class Mailer {
 	protected $_ci;
-	protected $email_pengirim = 'arnold040897@gmail.com'; // Isikan dengan email pengirim
-	protected $nama_pengirim = 'Suraco Jaya Abadi Motor'; // Isikan dengan nama pengirim
-	protected $password = 'Yanoris1234'; // Isikan dengan password email pengirim
+	protected $email_pengirim = '@gmail.com'; // Isikan dengan email pengirim
+	protected $nama_pengirim = 'Vihara Lahuta Maitreya'; // Isikan dengan nama pengirim
+	protected $password = ''; // Isikan dengan password email pengirim
 	public function __construct(){
 		$this->_ci = &get_instance(); // Set variabel _ci dengan Fungsi2-fungsi dari Codeigniter
 		require_once(APPPATH.'third_party/phpmailer/Exception.php');
@@ -51,7 +51,7 @@ class Mailer {
 			// 	$mail->AddEmbeddedImage('image/logo.png', 'logo_mynotescode', 'logo.png'); // Aktifkan jika ingin menampilkan gambar dalam email
 			if($data['attachment']['size'] <= 25000000){ // Jika ukuran file <= 25 MB (25.000.000 bytes)
 				$mail->addAttachment($data['attachment']['tmp_name'], $data['attachment']['name']);
-				$mail->SMTPDebug = 2;
+				// $mail->SMTPDebug = 2;
 				$send = $mail->send();
 				if($send){ // Jika Email berhasil dikirim
 					$response = array('status'=>'Sukses', 'message'=>'Email berhasil dikirim');

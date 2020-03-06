@@ -11,12 +11,16 @@ class Event extends CI_Controller {
 		$this->load->template('event',$data);
 	}
 	public function editevent($id){
-		$data['event']= $this->model_data->eventid($id);
-		$this->load->template('editevent',$data);
+		if ($this->session->status == '1') {
+			$data['event']= $this->model_data->eventid($id);
+			$this->load->template('editevent',$data);
+		}
 	}
 	public function hapus($id){
-		$this->model_data->hapus_event($id);
-		redirect('/event');
+		if ($this->session->status == '1') {
+			$this->model_data->hapus_event($id);
+			redirect('/event');
+		}
 	}
 	public function edit($id){
 		$this->model_data->edit_event($id);
@@ -42,6 +46,22 @@ class Event extends CI_Controller {
 			// redirect('/');
 			if (isset($file)) {
 				$this->model_data->simpan($file);
+				$umur = $this->input->post('umur');
+				if ($umur == '1') {
+					$query = $this->db->query("SELECT * FROM users where status='2'");
+					foreach ($query->result_array() as $row) {
+						$email = $row['email'];
+						$this->send($email);
+					}
+				}else {
+					$awal = $this->input->post('umur1');
+					$akhir = $this->input->post('umur2');
+					$query = $this->db->query("SELECT * FROM users where status='2' and umur between '".$awal."' and '".$akhir."'");
+					foreach ($query->result_array() as $row) {
+						$email = $row['email'];
+						$this->send($email);
+					}
+				}
 				redirect('/event');
 			}else {
 				echo "batal";
@@ -51,4 +71,24 @@ class Event extends CI_Controller {
 			echo "Gagal Upload";
 		}
 	}
+	public function send($email){
+		$this->load->library('mailer');
+		$email_penerima = $email;
+		$subjek = "Pemberitahuan";
+		$pesan = $this->input->post('deskripsi');
+		$attachment = $_FILES['foto'];
+		$content = $this->load->view('content', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
+		$sendmail = array(
+			'email_penerima'=>$email_penerima,
+			'subjek'=>$subjek,
+			'content'=>$content,
+			'attachment'=>$attachment
+		);
+		if(empty($attachment['name'])){ // Jika tanpa attachment
+			$send = $this->mailer->send($sendmail); // Panggil fungsi send yang ada di librari Mailer
+		}else{ // Jika dengan attachment
+			$send = $this->mailer->send_with_attachment($sendmail); // Panggil fungsi send_with_attachment yang ada di librari Mailer
+		}
+	}
+
 }

@@ -38,6 +38,7 @@ class Model_user extends CI_Model{
       'tempat_lahir' => $this->input->post('tmpt_lahir'),
       'no_hp' => $this->input->post('no_hp'),
       'umur' => $this->input->post('umur'),
+      'jenis_kelamin' => $this->input->post('jk'),
       'email' => $this->input->post('email'),
       'status' => "2"
     ];
@@ -54,9 +55,7 @@ class Model_user extends CI_Model{
       $tgl = $row['tgl_lahir'];
       $usia = $row['umur'];
       $id = $row['id_user'];
-      // $day = date('d',strtotime($tgl));
       $bln = date('m',strtotime($tgl));
-      $thn = date('y',strtotime($tgl));
       $bln1 = date('m');
       $biday = new DateTime($tgl);
       $today = new DateTime();

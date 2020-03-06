@@ -5,6 +5,7 @@ class Sembahyang extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('model_data');
+		$this->load->model('model_user');
 	}
 
 	public function index(){

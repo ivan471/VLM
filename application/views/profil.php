@@ -12,6 +12,7 @@
 						<h5 class="card-title">Tanggal Lahir</h5>
 						<h5 class="card-title">Tempat Lahir</h5>
 						<h5 class="card-title">Umur</h5>
+						<h5 class="card-title">Jenis Kelamin</h5>
 						<h5 class="card-title">Nomor WA</h5>
 					</div>
 					<div class="col-md-4 mt-2">
@@ -20,6 +21,7 @@
 						<h5 class="card-title">: <?= tgl_indo($profil['tgl_lahir']); ?></h5>
 						<h5 class="card-title">: <?= $profil['tempat_lahir']; ?></h5>
 						<h5 class="card-title">: <?= $profil['umur']; ?></h5>
+						<h5 class="card-title">: <?= $profil['jenis_kelamin']; ?></h5>
 						<h5 class="card-title">: <?= $profil['no_hp']; ?></h5>
 					</div>
 				</div>
