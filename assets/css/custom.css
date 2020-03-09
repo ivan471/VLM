@@ -148,3 +148,10 @@ body{
   padding-left: 15px;
   border: 1px solid #ddd;
 }
+.btn-grad1 {
+  background-image: linear-gradient(to right, #EB3349 0%, #F45C43 51%, #EB3349 100%);
+  transition-duration: 0.4s;
+}
+.btn-grad1:hover {
+  background-position: right center;
+}

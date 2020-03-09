@@ -12,6 +12,7 @@ $route['logout'] = 'VLM/logout';
 $route['member'] = 'Member';
 $route['list_admin'] = 'Admin';
 $route['add_admin'] = 'Admin/add_admin';
+$route['delete_sembayang/(:any)'] = 'Sembahyang/delete/$1';
 $route['proses_send'] = 'Admin/send';
 $route['members'] = 'Member';
 $route['profil/(:any)'] = 'VLM/profil/$1';

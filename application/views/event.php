@@ -3,6 +3,11 @@
   <div class="bg-cover center" style="background-image: url(assets/cover.jpg); height:auto;"></div>
   <!-- Overlay -->
   <div class="bg-overlay"></div>
+  <div class="container">
+    <div class="col-md-10 col-lg-7 ">
+      <h1 style="color:#fff;font-size:50px;">Event</h1>
+    </div>
+  </div>
   <!-- / .container -->
 </section>
 <section class="section" id="feature">

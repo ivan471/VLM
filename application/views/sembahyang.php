@@ -3,6 +3,11 @@
   <div class="bg-cover" style="background-image: url(assets/cover.png);"></div>
   <!-- Overlay -->
   <div class="bg-overlay"></div>
+  <div class="container">
+    <div class="col-md-10 col-lg-7 ">
+      <h1 style="color:#fff;font-size:50px;">Pemberitahuan</h1>
+    </div>
+  </div>
   <!-- / .container -->
 </section>
 <section class="section" id="feature">
@@ -28,24 +33,29 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <?php foreach ($pemberitahuan as $v): ?>
+          <?php if (empty($pemberitahuan)){ ?>
+            <h4 class="mx-auto">Tidak ada pemberitahuan</h4>
+          <?php }else{
+            foreach ($pemberitahuan as $v): ?>
             <div class="col-md-4">
               <div class="card">
                 <div class="card-body">
                   <h4><?= $v['isi']; ?></h4>
                 </div>
                 <div class="card-footer text-muted">
-                  <center>
-                    <?= tgl_indo($v['tanggal']); ?>
-                  </center>
+                  <!-- <center> -->
+                  <?= tgl_indo($v['tanggal']); ?>
+                  <!-- </center> -->
+                  <a href="<?= base_url().'delete_sembayang/'.$v['id'] ?>" class="btn btn-grad1 float-right" style="color:#FFF;">Hapus</a>
                 </div>
               </div>
             </div>
-          <?php endforeach; ?>
-        </div>
+          <?php endforeach;
+        } ?>
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <?php

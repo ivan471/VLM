@@ -35,12 +35,8 @@
             Kegiatan
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="<?= base_url().'sembahyang' ?>">Sembahyang</a>
+            <a class="dropdown-item" href="<?= base_url().'sembahyang' ?>">Pemberitahuan</a>
             <a class="dropdown-item" href="<?= base_url().'event' ?>">Event</a>
-            <?php if ($this->session->status == '1') { ?>
-              <a class="dropdown-item" href="<?= base_url().'members' ?>">Members</a>
-              <a class="dropdown-item" href="<?= base_url().'list_admin' ?>">Tambah Akun Admin</a>
-            <?php } ?>
             <a class="dropdown-item" href="#">Belajar</a>
           </div>
         </li>
@@ -56,6 +52,10 @@
               <?= $this->session->nama ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <?php if ($this->session->status == '1') { ?>
+                <a class="dropdown-item" href="<?= base_url().'list_admin' ?>">Tambah Akun Admin</a>
+                <a class="dropdown-item" href="<?= base_url().'members' ?>">Members</a>
+              <?php } ?>
               <a class="dropdown-item" href="<?= base_url().'profil/'.$this->session->uid ?>">Profil</a>
               <a class="dropdown-item" href="<?= base_url().'logout' ?>">Logout</a>
             </div>

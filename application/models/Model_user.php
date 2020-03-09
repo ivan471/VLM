@@ -45,6 +45,13 @@ class Model_user extends CI_Model{
     $this->db->insert( 'users', $data );
   }
   public function simpan($file,$id){
+    $this->db->where('id_user',$id);
+    $query = $this->db->get('users');
+    $row = $query->row();
+    $gambar = $row->gambar;
+    if ($gambar != "default.png") {
+      unlink("./asset/profil/$gambar");
+    }
     $data = array('gambar' => $file['file_name']);
     $this->db->where('id_user', $id);
     $this->db->update('users', $data);

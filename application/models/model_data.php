@@ -30,7 +30,14 @@ class Model_data extends CI_Model{
     return $query->row_array();
   }
   public function hapus_event($id){
+    $this->db->where('id',$id);
+    $query = $this->db->get('event');
+    $row = $query->row();
+    unlink("./asset/gambar_kegiatan/$row->gambar");
     $this->db->delete('event', array('id' => $id));
+  }
+  public function delete_sembayang($id){
+      $this->db->delete('pemberitahuan', array('id' => $id));
   }
   public function edit_event($id){
     $data = array('deskripsi' =>$this->input->post('deskripsi'));
