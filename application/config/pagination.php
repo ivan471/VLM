@@ -1,7 +1,7 @@
 <?php
 // config
-  $config['base_url'] = base_url('member/index');
-  $config['num_links'] = 3;
+$config['base_url'] = base_url('member/index');
+$config['num_links'] = 3;
 
 // styling
 $config['first_link'] = 'First';

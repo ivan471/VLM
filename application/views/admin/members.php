@@ -24,20 +24,20 @@
 								<th scope="col">E-mail</th>
 								<th scope="col">Umur</th>
 								<th scope="col">No WA</th>
-								<th>Action</th>
+								<th>Ubah Status</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php $i=1; foreach ($members as $m): ?>
 							<tr>
 								<th scope="row"><?= $i; ?></th>
-								<td><?= $m['nama'] ?></td>
-								<td><?= tgl_indo($m['tgl_lahir']); ?></td>
+								<td width="25%"><?= $m['nama'] ?></td>
+								<td width="20%"><?= tgl_indo($m['tgl_lahir']); ?></td>
 								<td><?= $m['tempat_lahir'] ?></td>
 								<td><?= $m['email'] ?></td>
 								<td><?= $m['umur'] ?></td>
 								<td><?= $m['no_hp'] ?></td>
-								<td><a href="<?= base_url().'perubahan/'.$m['id_user']?>" class="btn btn-grad">Perubahan Status</a></td>
+								<td width="15%"><a href="<?= base_url().'perubahan/'.$m['id_user']?>" class="btn btn-grad">Ubah</a></td>
 							</tr>
 						<?php $i++; endforeach; ?>
 						</tbody>
@@ -50,20 +50,7 @@
 </section>
 <?php
 function tgl_indo($tanggal){
-  $bulan = array (
-    1 =>   'Januari',
-    'Februari',
-    'Maret',
-    'April',
-    'Mei',
-    'Juni',
-    'Juli',
-    'Agustus',
-    'September',
-    'Oktober',
-    'November',
-    'Desember'
-  );
+  $bulan = array ( 1 =>   'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
   $pecahkan = explode('-', $tanggal);
   // variabel pecahkan 0 = tanggal
   // variabel pecahkan 1 = bulan

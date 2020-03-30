@@ -45,8 +45,3 @@ class Model_data extends CI_Model{
     $this->db->update('event',$data);
   }
 }
-
-
-
-
-?>

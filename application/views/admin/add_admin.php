@@ -8,24 +8,24 @@
 				<div class="card-body">
 					<form class="" action="<?= base_url().'save' ?>" method="post">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Nama Lengkap</label>
-							<input type="text" class="form-control" name="nama" id="exampleInputEmail1" required>
+							<label for="nama">Nama Lengkap</label>
+							<input type="text" class="form-control" name="nama" id="nama" required>
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1">E-mail</label>
-							<input type="email" class="form-control" name="email" id="exampleInputPassword1" required>
+							<label for="email">E-mail</label>
+							<input type="email" class="form-control" name="email" id="email" required>
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1">Tanggal Lahir</label>
-							<input type="date" class="form-control" name="tgl_lahir" id="exampleInputPassword1" required>
+							<label for="tgl_lahir">Tanggal Lahir</label>
+							<input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" required>
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1">Tempat Lahir</label>
-							<input type="text" class="form-control" name="tmpt_lahir" id="exampleInputPassword1" required>
+							<label for="tmpt_lahir">Tempat Lahir</label>
+							<input type="text" class="form-control" name="tmpt_lahir" id="tmpt_lahir" required>
 						</div>
 						<div class="form-group input-group">
 							<div class="input-group-prepend">
-								<span class="input-group-text"> <i class="fas fa-venus-mars"></i> </span>
+								<span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
 							</div>
 							<div class="ml-3 form-check form-check-inline">
 								<input type="radio" class="form-check-input" name="jk" value="Pria" id="pria" required>
@@ -37,8 +37,8 @@
 							</div>
 						</div> <!-- form-group// -->
 						<div class="form-group">
-							<label for="exampleInputPassword1">Umur</label>
-							<input type="number" class="form-control" name="umur" id="exampleInputPassword1" required>
+							<label for="umur">Umur</label>
+							<input type="number" class="form-control" name="umur" id="umur" required>
 						</div>
 						<button type="submit" class="btn btn-primary">Simpan</button>
 					</form>

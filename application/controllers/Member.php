@@ -7,8 +7,7 @@ class Member extends CI_Controller {
 		$this->load->model('model_user');
 	}
 
-	public function index()
-	{
+	public function index(){
 		if ($this->session->status == '1') {
 			$this->model_user->tambah_umur();
 			$this->load->library('pagination');
@@ -31,7 +30,6 @@ class Member extends CI_Controller {
 			$data['start'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0 ;
 			$data['members'] = $this->model_user->all_user($config['per_page'], $data['start'], $data['keyword']);
 			$data['pagination'] = $this->pagination->create_links();
-			// $data['members'] = $this->model_user->all_user();
 			$this->load->template('admin/members', $data);
 		}
 	}

@@ -1,8 +1,5 @@
 <?php
 class Model_user extends CI_Model{
-  public function __construct(){
-    parent::__construct();
-  }
 
   public function all_user($limit, $start, $keyword = null){
     if( $keyword ){

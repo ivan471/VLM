@@ -21,21 +21,28 @@
               <h3>Input Event</h3>
             </div>
             <div class="card-body">
-              <form class="" action="<?= base_url().'simpan' ?>" method="post" enctype="multipart/form-data">
-                <input class="mb-2" type="file" name="foto" value="">
-                <label for="">Pilihan Umur</label>
-                <input type="radio" name="umur" value="1" onclick="javascript:Check();" id="semua" checked>
-                <label for="semua">Semua Umur</label>
-                <input type="radio" name="umur" value="2" onclick="javascript:Check();" id="antara">
-                <label for="antara">Pilihan Umur</label>
-                <div id="pilihan" style="display:none">
-                  <label for="umur1">Dari Umur</label>
-                  <input type="number" name="umur1" value="">
-                  <label for="umur2" class="mr-2 ml-2">Sampai Umur</label>
-                  <input type="number" name="umur2" value="">
+              <?php if ($kq == "1"): ?>
+                <div class="alert alert-success" role="alert">
+                  Pesan Berhasil Terkirim.
                 </div>
-                <textarea class="form-control mb-2" name="deskripsi" placeholder="Masukkan Informasi Event" required></textarea>
-                <button type="submit" class="btn simpan mb-2">Simpan</button>
+              <?php endif; ?>
+              <form id="form_event" method="post" action="<?= base_url().'simpan' ?>"enctype="multipart/form-data">
+                <input class="mb-2" id="file" type="file" name="foto" accept="image/jpeg, image/x-png"  onchange="ValidateSize(this)">
+                <div class="">
+                  <label for="">Pilihan Umur :</label>
+                  <label for="semua">Semua Umur</label>
+                  <input type="radio" name="umur" id="umur" value="1" onclick="javascript:Check();" id="semua" class="mr-5 ml-2" checked>
+                  <label for="antara">Pilihan Umur</label>
+                  <input type="radio" name="umur" id="umur" value="2" onclick="javascript:Check();" id="antara" class="ml-2">
+                  <div id="pilihan" style="display:none">
+                    <label for="umur1">Dari Umur</label>
+                    <input type="number" name="umur1" value="">
+                    <label for="umur2" class="mr-2 ml-2">Sampai Umur</label>
+                    <input type="number" name="umur2" value="">
+                  </div>
+                </div>
+                <textarea class="form-control mb-2" name="deskripsi" id="deskripsi" placeholder="Masukkan Informasi Event" required></textarea>
+                <button type="submit" class="btn simpan mb-2" id="btn_save" >Simpan</button>
               </form>
             </div>
           </div>
@@ -72,11 +79,34 @@
     </div>
   </div>
 </section>
-<!-- The Modal -->
+<!-- The Modal Image-->
 <div id="myModal" class="modal">
   <div class="modal-body">
     <img class="modal-content" id="img01">
     <span class="close" id="close">&times;</span>
+  </div>
+</div>
+
+<div class="modal" id="modal_notif" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Pesan event sudah terkirim</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn_close" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="modal_notif_error" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Ukuran File Melebihi 4 MB. Silakan Pilih lagi file dibawah 4MB.</p>
+      </div>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="tutup()">Close</button>
+    </div>
   </div>
 </div>
 <script>
@@ -105,5 +135,35 @@ function Check() {
   } else {
     document.getElementById('pilihan').style.display = 'none';
   }
+}
+
+// $(document).ready(function(){
+//   $('#btn_save').click(function(){
+//     var file = $("#file").val();
+//     var umur = $("#umur").val();
+//     var deskripsi = $("#deskripsi").val();
+//     $.ajax({
+//       url:"<?php echo base_url('event/gambar') ?>",
+//       method:"POST",
+//       data: {
+//         file:file,
+//         umur:umur,
+//         deskripsi:deskripsi
+//       },
+//       success: function(data){
+//         document.getElementById('modal_notif').style.display = 'block';
+//       }
+//     })
+//   });
+// });
+function ValidateSize(file) {
+  var modal = document.getElementById('modal_notif_error');
+  var FileSize = file.files[0].size / 1024 / 1024; // in MB
+  if (FileSize > 4) {
+    modal.style.display = 'block';
+  }
+}
+function tutup(){
+  document.getElementById('modal_notif_error').style.display = 'none';
 }
 </script>

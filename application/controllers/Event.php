@@ -7,6 +7,7 @@ class Event extends CI_Controller {
 		$this->load->model('model_data');
 	}
 	public function index(){
+		$data['kq'] ="0";
 		$data['event']= $this->model_data->event();
 		$this->load->template('event',$data);
 	}
@@ -36,7 +37,7 @@ class Event extends CI_Controller {
 	}
 	public function gambar(){
 		$config['upload_path']          = './assets/gambar_kegiatan/';
-		$config['allowed_types']        = 'jpg|png';
+		$config['allowed_types']        = 'jpg|png|jpeg';
 		$config['max_size']             = '0';
 		$config['remove_space']					= TRUE;
 		$this->upload->initialize($config);
@@ -62,7 +63,8 @@ class Event extends CI_Controller {
 						$this->send($email);
 					}
 				}
-				redirect('/event');
+				$data['kq']="1";
+				$this->load->template('event',$data);
 			}else {
 				echo "batal";
 			}

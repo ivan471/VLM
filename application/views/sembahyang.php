@@ -46,7 +46,9 @@
                   <!-- <center> -->
                   <?= tgl_indo($v['tanggal']); ?>
                   <!-- </center> -->
-                  <a href="<?= base_url().'delete_sembayang/'.$v['id'] ?>" class="btn btn-grad1 float-right" style="color:#FFF;">Hapus</a>
+                  <?php if ($this->session->status == "1"): ?>
+                    <a href="<?= base_url().'delete_sembayang/'.$v['id'] ?>" class="btn btn-grad1 float-right" style="color:#FFF;">Hapus</a>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>

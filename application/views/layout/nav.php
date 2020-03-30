@@ -15,11 +15,11 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <!-- Links -->
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link" href="<?= base_url(); ?>">
             Halaman Utama
           </a>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Tentang Vihara
