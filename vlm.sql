@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Mar 2020 pada 09.51
+-- Waktu pembuatan: 31 Mar 2020 pada 08.57
 -- Versi server: 10.4.10-MariaDB
 -- Versi PHP: 7.3.12
 
@@ -39,11 +39,22 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `deskripsi`, `gambar`) VALUES
-(1, 'sipp', 'KEGIATAN_RUTIN.png'),
-(2, 'dari\r\ndiriku\r\naku mengaliur\r\ndsm\r\nakhirnya\r\naku\r\nmenemukan\r\njati \r\ndiriku', 'images_(2)4.jpg'),
-(3, 'kegiatan bulan ini sangat seruu lhoo soo jangan ketinggalan dan lihatlah apa yang akan kamu dapat', 'VLM.png'),
-(7, 'Test pengiriman notifikasi', '16114.jpg'),
-(9, 'test', '6541.jpg');
+(1, '123', '65117.jpg'),
+(2, 'test pengiriman 1', '16911.jpg'),
+(3, 'test pengiriman 2', '65131.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `file`
+--
+
+CREATE TABLE `file` (
+  `id_file` int(11) NOT NULL,
+  `nama_file` varchar(32) NOT NULL,
+  `keterangan` text NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -62,7 +73,11 @@ CREATE TABLE `pemberitahuan` (
 --
 
 INSERT INTO `pemberitahuan` (`id`, `isi`, `tanggal`) VALUES
-(1, 'Test pemberitahuan saja', '2020-02-15');
+(2, 'Test pemberitahuan ', '2020-03-09'),
+(3, 'test 2', '2020-03-09'),
+(4, 'test', '2020-03-09'),
+(5, 'test', '2020-03-09'),
+(6, 'test pengiriman', '2020-03-09');
 
 -- --------------------------------------------------------
 
@@ -106,6 +121,12 @@ ALTER TABLE `event`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `file`
+--
+ALTER TABLE `file`
+  ADD PRIMARY KEY (`id_file`);
+
+--
 -- Indeks untuk tabel `pemberitahuan`
 --
 ALTER TABLE `pemberitahuan`
@@ -125,13 +146,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `file`
+--
+ALTER TABLE `file`
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `pemberitahuan`
 --
 ALTER TABLE `pemberitahuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

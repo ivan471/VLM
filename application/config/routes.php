@@ -26,6 +26,12 @@ $route['simpan'] 									= 'Event/gambar';
 $route['list_admin'] 							= 'Admin';
 $route['add_admin'] 							= 'Admin/add_admin';
 $route['proses_send'] 						= 'Admin/send';
+//Belajar
+$route['belajar'] 								= 'Belajar';
+// $route['hapus/(:any)'] 						= 'Event/hapus/$1';
+// $route['edit/(:any)'] 						= 'Event/editevent/$1';
+// $route['edit_event/(:any)'] 			= 'Event/edit/$1';
+$route['save'] 										= 'Belajar/save';
 
 $route['default_controller'] 			= 'VLM';
 $route['404_override'] 						= '';

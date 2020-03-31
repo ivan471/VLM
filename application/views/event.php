@@ -25,6 +25,11 @@
                 <div class="alert alert-success" role="alert">
                   Pesan Berhasil Terkirim.
                 </div>
+              <?php endif;
+              if ($kq == "2"): ?>
+                <div class="alert alert-danger" role="alert">
+                  Pesan Gagal terkirim.
+                </div>
               <?php endif; ?>
               <form id="form_event" method="post" action="<?= base_url().'simpan' ?>"enctype="multipart/form-data">
                 <input class="mb-2" id="file" type="file" name="foto" accept="image/jpeg, image/x-png"  onchange="ValidateSize(this)">
@@ -137,25 +142,6 @@ function Check() {
   }
 }
 
-// $(document).ready(function(){
-//   $('#btn_save').click(function(){
-//     var file = $("#file").val();
-//     var umur = $("#umur").val();
-//     var deskripsi = $("#deskripsi").val();
-//     $.ajax({
-//       url:"<?php echo base_url('event/gambar') ?>",
-//       method:"POST",
-//       data: {
-//         file:file,
-//         umur:umur,
-//         deskripsi:deskripsi
-//       },
-//       success: function(data){
-//         document.getElementById('modal_notif').style.display = 'block';
-//       }
-//     })
-//   });
-// });
 function ValidateSize(file) {
   var modal = document.getElementById('modal_notif_error');
   var FileSize = file.files[0].size / 1024 / 1024; // in MB

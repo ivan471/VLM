@@ -69,8 +69,8 @@ class Event extends CI_Controller {
 				echo "batal";
 			}
 		}else{
-			//jika gagal :
-			echo "Gagal Upload";
+			$data['kq']="2";
+			$this->load->template('event',$data);
 		}
 	}
 	public function send($email){

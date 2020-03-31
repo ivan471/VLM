@@ -15,11 +15,6 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <!-- Links -->
       <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link" href="<?= base_url(); ?>">
-            Halaman Utama
-          </a>
-        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Tentang Vihara
@@ -37,7 +32,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="<?= base_url().'sembahyang' ?>">Pemberitahuan</a>
             <a class="dropdown-item" href="<?= base_url().'event' ?>">Event</a>
-            <a class="dropdown-item" href="#">Belajar</a>
+            <a class="dropdown-item" href="<?= base_url().'belajar' ?>">Belajar</a>
           </div>
         </li>
         <?php if (!isset($this->session->uid)){ ?>

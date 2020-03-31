@@ -25,6 +25,10 @@ class Model_data extends CI_Model{
     $query = $this->db->query("SELECT * FROM pemberitahuan order by id desc");
     return $query->result_array();
   }
+  public function tampilkan_file(){
+    $query = $this->db->query("SELECT * FROM file order by nama_file asc");
+    return $query->result_array();
+  }
   public function eventid($id){
     $query = $this->db->query("SELECT * FROM event where id='".$id."'");
     return $query->row_array();
@@ -43,5 +47,13 @@ class Model_data extends CI_Model{
     $data = array('deskripsi' =>$this->input->post('deskripsi'));
     $this->db->where('id',$id);
     $this->db->update('event',$data);
+  }
+  public function save($file){
+    $data=[
+      'tanggal' =>  date('Y-m-d'),
+      'keterangan' => $this->input->post('keterangan'),
+      'nama_file' =>$file['file_name']
+    ];
+    $this->db->insert('file',$data);
   }
 }
