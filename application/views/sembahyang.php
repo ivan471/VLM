@@ -18,7 +18,7 @@
           <form action="<?= base_url().'simpan_pemberitahuan' ?>" method="post">
             <div class="form-group">
               <label for="pemberitahuan">Isi Pemberitahuan</label>
-              <textarea role="3" id="pemberitahuan" class="form-control" aria-describedby="emailHelp" name="pemberitahuan" placeholder="Isi Pemberitahuan" required></textarea>
+              <textarea role="3" id="pemberitahuan" class="form-control" name="pemberitahuan" placeholder="Isi Pemberitahuan" required></textarea>
             </div>
             <button type="submit" class="btn simpan">Simpan</button>
           </form>
@@ -29,7 +29,7 @@
   <div class="container">
     <div class="card">
       <div class="card-header">
-        <h2>Daftar Pemberitahuan Sembahyang</h2>
+        <h2>Daftar Pemberitahuan</h2>
       </div>
       <div class="card-body">
         <div class="row">

@@ -22,14 +22,14 @@ class Belajar extends CI_Controller {
 			$file = $this->upload->data();
 			if (isset($file)) {
 				$this->model_data->save($file);
-				$data['kq']="1";
+				$data['pesan']="1";
 				$this->load->template('belajar',$data);
 			}else {
-				$data['kq']="2";
+				$data['pesan']="2";
 				$this->load->template('belajar',$data);
 			}
 		}else{
-			$data['kq']="2";
+			$data['pesan']="2";
 			$this->load->template('belajar',$data);
 		}
 	}

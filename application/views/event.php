@@ -14,75 +14,83 @@
   <div class="container">
     <!-- <form class="was-validated" action="" method="post"> -->
     <?php if ($this->session->status == '1'): ?>
-      <center>
-        <div class="col-md-8 mb-3 mb-md-0">
-          <div class="card text-center">
-            <div class="card-header">
+      <div class="col-md-8 mb-3 mb-md-0 mx-auto">
+        <div class="card">
+          <div class="card-header">
+            <center>
               <h3>Input Event</h3>
-            </div>
-            <div class="card-body">
-              <?php if ($kq == "1"): ?>
-                <div class="alert alert-success" role="alert">
-                  Pesan Berhasil Terkirim.
-                </div>
-              <?php endif;
-              if ($kq == "2"): ?>
-                <div class="alert alert-danger" role="alert">
-                  Pesan Gagal terkirim.
-                </div>
-              <?php endif; ?>
-              <form id="form_event" method="post" action="<?= base_url().'simpan' ?>"enctype="multipart/form-data">
-                <input class="mb-2" id="file" type="file" name="foto" accept="image/jpeg, image/x-png"  onchange="ValidateSize(this)">
-                <div class="">
-                  <label for="">Pilihan Umur :</label>
-                  <label for="semua">Semua Umur</label>
-                  <input type="radio" name="umur" id="umur" value="1" onclick="javascript:Check();" id="semua" class="mr-5 ml-2" checked>
-                  <label for="antara">Pilihan Umur</label>
-                  <input type="radio" name="umur" id="umur" value="2" onclick="javascript:Check();" id="antara" class="ml-2">
-                  <div id="pilihan" style="display:none">
-                    <label for="umur1">Dari Umur</label>
-                    <input type="number" name="umur1" value="">
-                    <label for="umur2" class="mr-2 ml-2">Sampai Umur</label>
-                    <input type="number" name="umur2" value="">
-                  </div>
-                </div>
-                <textarea class="form-control mb-2" name="deskripsi" id="deskripsi" placeholder="Masukkan Informasi Event" required></textarea>
-                <button type="submit" class="btn simpan mb-2" id="btn_save" >Simpan</button>
-              </form>
-            </div>
+            </center>
           </div>
-        </div>
-      </center>
-    <?php endif; ?>
-    <!-- </form> -->
-    <div class="shadow card mt-3">
-      <div class="card-header">
-        <h2>Daftar Event</h2>
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <?php foreach ($event as $k): ?>
-            <div class="col-md-4 mb-3">
-              <div class="shadow card">
-                <div class="bingkai-gambar">
-                  <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" class="responsive gmbr1">
+          <div class="card-body">
+            <?php if ($kq == "1"): ?>
+              <div class="alert alert-success" role="alert">
+                Pesan Berhasil Terkirim.
+              </div>
+            <?php endif;
+            if ($kq == "2"): ?>
+            <div class="alert alert-danger" role="alert">
+              Pesan Gagal terkirim.
+            </div>
+          <?php endif; ?>
+          <form id="form_event" method="post" action="<?= base_url().'simpan' ?>"enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-sm-3">
+                <label>Gambar</label><br>
+                <label>Pilihan Umur</label><br>
+                <label>Keterangan</label>
+              </div>
+              <div class="col-sm-9">
+                <input class="mb-2" id="file" type="file" name="foto" accept="image/jpeg, image/x-png"  onchange="ValidateSize(this)"><br>
+                <label for="semua">Semua Umur</label>
+                <input type="radio" name="umur" value="1" onclick="Check()" id="semua" class="mr-5 ml-2" checked>
+                <label for="antara">Pilihan Umur</label>
+                <input type="radio" name="umur" value="2" onclick="Check()" id="antara" class="ml-2">
+                <div id="pilihan" style="display:none">
+                  <label for="umur1" class="mr-2">Dari Umur</label>
+                  <input type="number" name="umur1" value=""><br>
+                  <label for="umur2" class="mr-2">Sampai Umur</label>
+                  <input type="number" name="umur2" value="">
                 </div>
-                <div class="card-body">
-                  <div style="overflow-y:scroll;height:100px;">
-                    <p><?= $k['deskripsi'] ?></p>
-                  </div>
-                  <?php if ($this->session->status == '1'): ?>
-                    <a href="<?= base_url().'edit/'.$k['id'] ?>" class="btn btn-primary float-left">Edit</a>
-                    <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="btn btn-danger float-right">Hapus</a>
-                  <?php endif; ?>
-                </div>
+                <textarea class="form-control mb-2" name="deskripsi" id="deskripsi" placeholder="Masukkan Keterangan Event" required></textarea>
               </div>
             </div>
-          <?php endforeach; ?>
+            <center>
+              <button type="submit" class="btn simpan mb-2" id="btn_save">Simpan</button>
+            </center>
+          </form>
         </div>
       </div>
     </div>
+  <?php endif; ?>
+  <!-- </form> -->
+  <div class="shadow card mt-3">
+    <div class="card-header">
+      <h2>Daftar Event</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <?php foreach ($event as $k): ?>
+          <div class="col-md-4 mb-3">
+            <div class="shadow card">
+              <div class="bingkai-gambar">
+                <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" class="responsive gmbr1">
+              </div>
+              <div class="card-body">
+                <div style="overflow-y:scroll;height:100px;">
+                  <p><?= $k['deskripsi'] ?></p>
+                </div>
+                <?php if ($this->session->status == '1'): ?>
+                  <a href="<?= base_url().'edit/'.$k['id'] ?>" class="btn btn-primary float-left">Edit</a>
+                  <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="btn btn-danger float-right">Hapus</a>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
   </div>
+</div>
 </section>
 <!-- The Modal Image-->
 <div id="myModal" class="modal">
@@ -114,7 +122,7 @@
     </div>
   </div>
 </div>
-<script>
+<script type="text/javascript">
 // Get the modal
 var modal = document.getElementById("myModal");
 var i;
@@ -132,8 +140,6 @@ var span = document.getElementById("close");
 span.onclick = function() {
   modal.style.display = "none";
 }
-</script>
-<script type="text/javascript">
 function Check() {
   if (document.getElementById('antara').checked) {
     document.getElementById('pilihan').style.display = 'block';
@@ -141,7 +147,6 @@ function Check() {
     document.getElementById('pilihan').style.display = 'none';
   }
 }
-
 function ValidateSize(file) {
   var modal = document.getElementById('modal_notif_error');
   var FileSize = file.files[0].size / 1024 / 1024; // in MB
