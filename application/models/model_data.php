@@ -41,7 +41,7 @@ class Model_data extends CI_Model{
     $this->db->delete('event', array('id' => $id));
   }
   public function delete_sembayang($id){
-      $this->db->delete('pemberitahuan', array('id' => $id));
+    $this->db->delete('pemberitahuan', array('id' => $id));
   }
   public function edit_event($id){
     $data = array('deskripsi' =>$this->input->post('deskripsi'));
@@ -55,5 +55,9 @@ class Model_data extends CI_Model{
       'nama_file' =>$file['file_name']
     ];
     $this->db->insert('file',$data);
+  }
+  public function download($id){
+    $query = $this->db->query("SELECT * from file where id_file='".$id."'");
+    return $query->row_array();
   }
 }

@@ -20,7 +20,7 @@
               <label for="pemberitahuan">Isi Pemberitahuan</label>
               <textarea role="3" id="pemberitahuan" class="form-control" name="pemberitahuan" placeholder="Isi Pemberitahuan" required></textarea>
             </div>
-            <button type="submit" class="btn simpan">Simpan</button>
+            <button type="submit" class="btn simpan" onclick="showPage()">Simpan</button>
           </form>
         </div>
       </div>
@@ -59,7 +59,11 @@
   </div>
 </div>
 </section>
-
+<script type="text/javascript">
+function showPage() {
+  document.getElementById("loader").style.display = "block";
+}
+</script>
 <?php
 function tgl_indo($tanggal){
   $bulan = array (

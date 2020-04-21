@@ -33,5 +33,11 @@ class Belajar extends CI_Controller {
 			$this->load->template('belajar',$data);
 		}
 	}
+	public function download($id){
+		$this->load->helper('download');
+		$fileinfo = $this->model_data->download($id);
+		$file = './asset/pdf/'.$fileinfo ['nama_file'];
+		force_download($file, NULL);
+	}
 
 }

@@ -38,7 +38,7 @@
 								</div>
 							</div>
 							<center>
-								<button type="submit" class="btn simpan mb-2">Simpan</button>
+								<button type="submit" class="btn simpan mb-2" onclick="showPage()">Simpan</button>
 							</center>
 						</form>
 					</div>
@@ -50,10 +50,10 @@
 				<table class="table table-sm table-bordered table-hover toggle-circle" data-page-size="10">
 					<thead>
 						<tr>
-							<th>Nama File</th>
-							<th>Tanggal</th>
-							<th>Keterangan</th>
-							<th></th>
+							<th style="width:30%; text-align: center;">Nama File</th>
+							<th style="width:15%; text-align: center;">Tanggal</th>
+							<th style="width:45%; text-align: center;">Keterangan</th>
+							<th style="width:10%; text-align: center;">Download</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -62,7 +62,9 @@
 							<td><?= $k['tanggal'] ?></td>
 							<td><?= $k['keterangan'] ?></td>
 							<td>
-								<button type="button" name="button">Download PDF</button>
+								<form action="<?= base_url().'download/'.$k['id_file'] ?>" method="post">
+									<button type="button" name="button">Download PDF</button>
+								</form>
 							</td>
 						<?php endforeach; ?>
 					</tbody>
@@ -71,6 +73,8 @@
 		</div>
 	</div>
 </section>
+<div id="loader" style="display:none;"></div>
+
 <div class="modal" id="modal_notif_error" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -82,6 +86,9 @@
 	</div>
 </div>
 <script type="text/javascript">
+function showPage() {
+  document.getElementById("loader").style.display = "block";
+}
 function ValidateSize(file) {
 	var modal = document.getElementById('modal_notif_error');
 	var FileSize = file.files[0].size / 1024 / 1024; // in MB
