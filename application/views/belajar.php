@@ -34,7 +34,7 @@
 								</div>
 								<div class="col-sm-9">
 									<input class="mb-2" id="file" type="file" name="file" accept="application/pdf" onchange="ValidateSize(this)">
-									<textarea class="form-control mb-2" name="deskripsi" placeholder="Masukkan Keterangan File" required></textarea>
+									<textarea class="form-control mb-2" name="keterangan" placeholder="Masukkan Keterangan File" required></textarea>
 								</div>
 							</div>
 							<center>
@@ -57,13 +57,13 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php foreach ($file as $k): ?>
+						<?php foreach ($files as $k): ?>
 							<td><?= $k['nama_file'] ?></td>
 							<td><?= $k['tanggal'] ?></td>
 							<td><?= $k['keterangan'] ?></td>
 							<td>
-								<form action="<?= base_url().'download/'.$k['id_file'] ?>" method="post">
-									<button type="button" name="button">Download PDF</button>
+								<form action="<?= base_url().'download_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
+									<button type="submit" name="button">Download PDF</button>
 								</form>
 							</td>
 						<?php endforeach; ?>

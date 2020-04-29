@@ -28,7 +28,7 @@ $route['add_admin'] 							= 'Admin/add_admin';
 $route['proses_send'] 						= 'Admin/send';
 //Belajar
 $route['belajar'] 								= 'Belajar';
-$route['download/(:any)'] 				= 'Belajar/download/$1';
+$route['download_file/(:any)'] 				= 'Belajar/download/$1';
 $route['save'] 										= 'Belajar/save';
 // $route['hapus/(:any)'] 						= 'Event/hapus/$1';
 // $route['edit/(:any)'] 						= 'Event/editevent/$1';
