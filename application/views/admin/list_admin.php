@@ -8,7 +8,9 @@
 			</div>
 			<div class="card-body">
 				<h3 class="mb-3">Daftar Admin</h3>
-				<a href="<?= base_url().'add_admin' ?>" class="btn btn-grad">Tambah Akun Admin</a>
+				<form class="" action="<?= base_url().'add_admin' ?>" method="post">
+					<button type="submit" name="button" class="save">Tambah Akun Admin</button>
+				</form>
 				<table class="table table-striped">
 					<thead>
 						<tr>

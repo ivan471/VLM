@@ -55,7 +55,7 @@
               </div>
             </div>
             <center>
-              <button type="submit" class="btn simpan mb-2" id="btn_save">Simpan</button>
+              <button type="submit" class="save mb-2" id="btn_save">Simpan</button>
             </center>
           </form>
         </div>
@@ -80,8 +80,8 @@
                   <p><?= $k['deskripsi'] ?></p>
                 </div>
                 <?php if ($this->session->status == '1'): ?>
-                  <a href="<?= base_url().'edit/'.$k['id'] ?>" class="btn btn-primary float-left">Edit</a>
-                  <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="btn btn-danger float-right">Hapus</a>
+                  <a href="<?= base_url().'edit/'.$k['id'] ?>" class="download float-left">Edit</a>
+                  <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="delete float-right">Hapus</a>
                 <?php endif; ?>
               </div>
             </div>

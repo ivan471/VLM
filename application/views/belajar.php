@@ -38,7 +38,7 @@
 								</div>
 							</div>
 							<center>
-								<button type="submit" class="btn simpan mb-2" onclick="showPage()">Simpan</button>
+								<button type="submit" class="save" onclick="showPage()">Simpan</button>
 							</center>
 						</form>
 					</div>
@@ -59,11 +59,11 @@
 					<tbody>
 						<?php foreach ($files as $k): ?>
 							<td><?= $k['nama_file'] ?></td>
-							<td><?= $k['tanggal'] ?></td>
+							<td style="text-align: center;"><?= $k['tanggal'] ?></td>
 							<td><?= $k['keterangan'] ?></td>
 							<td>
 								<form action="<?= base_url().'download_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
-									<button type="submit" name="button">Download PDF</button>
+									<button class="download" type="submit" name="button">Download</button>
 								</form>
 							</td>
 						<?php endforeach; ?>

@@ -16,16 +16,21 @@
 
 <section class="section" id="feature">
 <div class="container">
+  <h1>Edit Event</h1>
   <div class="col-md-8">
-    <form class="" action="<?= base_url().'edit_event/'.$event['id'] ?>" method="post">
-      <div class="form-group">
-        <label for="">Deskripsi</label>
-        <textarea name="deskripsi" rows="8" cols="80"><?= $event['deskripsi']?></textarea>
+    <div class="card">
+      <div class="card-body">
+        <form action="<?= base_url().'edit_event/'.$event['id'] ?>" method="post">
+          <div class="form-group">
+            <label for="">Deskripsi</label>
+            <textarea name="deskripsi" rows="5" cols="80" class="form-control mb-2"><?= $event['deskripsi']?></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" name="button" class="save">Simpan Perubahan</button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <button type="submit" name="button" class="btn btn-primary">Simpan Perubahan</button>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
 </section>

@@ -20,7 +20,7 @@
               <label for="pemberitahuan">Isi Pemberitahuan</label>
               <textarea role="3" id="pemberitahuan" class="form-control" name="pemberitahuan" placeholder="Isi Pemberitahuan" required></textarea>
             </div>
-            <button type="submit" class="btn simpan" onclick="showPage()">Simpan</button>
+            <button type="submit" class="save" onclick="showPage()">Simpan</button>
           </form>
         </div>
       </div>
@@ -37,7 +37,7 @@
             <h4 class="mx-auto">Tidak ada pemberitahuan</h4>
           <?php }else{
             foreach ($pemberitahuan as $v): ?>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
               <div class="card">
                 <div class="card-body">
                   <h4><?= $v['isi']; ?></h4>
@@ -47,7 +47,7 @@
                   <?= tgl_indo($v['tanggal']); ?>
                   <!-- </center> -->
                   <?php if ($this->session->status == "1"): ?>
-                    <a href="<?= base_url().'delete_sembayang/'.$v['id'] ?>" class="btn btn-grad1 float-right" style="color:#FFF;">Hapus</a>
+                    <a href="<?= base_url().'delete_sembayang/'.$v['id'] ?>" class="delete float-right" style="color:#FFF;">Hapus</a>
                   <?php endif; ?>
                 </div>
               </div>

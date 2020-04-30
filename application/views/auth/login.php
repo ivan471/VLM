@@ -21,7 +21,7 @@
 									<input type="password" name="password" id="password" class="form-control" required>
 								</div>
 								<div class="form-group">
-									<button type="submit" name="button" class="btn btn-grad">Login</button>
+									<button type="submit" name="button" class="save">Login</button>
 								</div>
 								<div class="text-right">
 									<h5 class="info">Jika belum ada akun, <a href="<?= base_url().'register_page' ?>" class="text-info">Klik disini.</a></h5>
