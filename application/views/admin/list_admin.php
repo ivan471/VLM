@@ -3,37 +3,36 @@
 		<div class="col-md-11 mx-auto">
 			<div class="card">
 				<div class="card-header">
-					<h3>Daftar Akun Admin Baru</h3>
+					<h3>Daftar Admin</h3>
 				</div>
-			</div>
-			<div class="card-body">
-				<h3 class="mb-3">Daftar Admin</h3>
-				<form class="" action="<?= base_url().'add_admin' ?>" method="post">
-					<button type="submit" name="button" class="save">Tambah Akun Admin</button>
-				</form>
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th scope="col">No</th>
-							<th scope="col" width="35%">Nama</th>
-							<th scope="col">E-mail</th>
-							<th scope="col">Umur</th>
-							<th scope="col">Nomor WA</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php $id=1;
-						foreach ($list as $admin): ?>
-						<tr>
-							<th scope="row"><?= $id; ?></th>
-							<td><?= $admin['nama'] ?></td>
-							<td width="10%"><?= $admin['email'] ?></td>
-							<td><?= $admin['umur'] ?></td>
-							<td><?= $admin['no_hp'] ?></td>
-						</tr>
-						<?php $id++; endforeach; ?>
-					</tbody>
-				</table>
+				<div class="card-body">
+					<form class="mb-3" action="<?= base_url().'add_admin' ?>" method="post">
+						<button type="submit" name="button" class="save">Tambah Akun Admin</button>
+					</form>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col" style="color:#000;">No</th>
+								<th scope="col" width="35%" style="color:#000;">Nama</th>
+								<th scope="col" style="color:#000;">E-mail</th>
+								<th scope="col" style="color:#000;">Umur</th>
+								<th scope="col" style="color:#000;">Nomor WA</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php $id=1;
+							foreach ($list as $admin): ?>
+							<tr>
+								<th scope="row" style="color:#000;"><?= $id; ?></th>
+								<td style="color:#000;"><?= $admin['nama'] ?></td>
+								<td width="10%" style="color:#000;"><?= $admin['email'] ?></td>
+								<td style="color:#000;"><?= $admin['umur'] ?></td>
+								<td style="color:#000;"><?= $admin['no_hp'] ?></td>
+							</tr>
+							<?php $id++; endforeach; ?>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -10,7 +10,7 @@
 						<form class="" action="<?= base_url('member') ?>" method="post" enctype="multipart/form-data">
 							<div class="form-group">
 								<input type="text" name="keyword" class="input" value="">
-								<input type="submit" name="submit" class="btn btn-grad" value="Cari Members">
+								<input type="submit" name="submit" class="save" value="Cari Members">
 							</div>
 						</form>
 					</div>
@@ -37,7 +37,7 @@
 								<td><?= $m['email'] ?></td>
 								<td><?= $m['umur'] ?></td>
 								<td><?= $m['no_hp'] ?></td>
-								<td width="15%"><a href="<?= base_url().'perubahan/'.$m['id_user']?>" class="btn btn-grad">Ubah</a></td>
+								<td width="15%"><a href="<?= base_url().'perubahan/'.$m['id_user']?>" class="download">Ubah</a></td>
 							</tr>
 						<?php $i++; endforeach; ?>
 						</tbody>

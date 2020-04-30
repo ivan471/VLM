@@ -50,17 +50,17 @@
 				<table class="table table-sm table-bordered table-hover toggle-circle" data-page-size="10">
 					<thead>
 						<tr>
-							<th style="width:30%; text-align: center;">Nama File</th>
-							<th style="width:15%; text-align: center;">Tanggal</th>
-							<th style="width:45%; text-align: center;">Keterangan</th>
-							<th style="width:10%; text-align: center;">Download</th>
+							<th style="width:30%; text-align: center; color:#000;">Nama File</th>
+							<th style="width:15%; text-align: center; color:#000;">Tanggal</th>
+							<th style="width:45%; text-align: center; color:#000;">Keterangan</th>
+							<th style="width:10%; text-align: center; color:#000;">Download</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php foreach ($files as $k): ?>
-							<td><?= $k['nama_file'] ?></td>
-							<td style="text-align: center;"><?= $k['tanggal'] ?></td>
-							<td><?= $k['keterangan'] ?></td>
+							<td style="color:#000;"><?= $k['nama_file'] ?></td>
+							<td style="text-align: center; color:#000;"><?= tgl_indo($k['tanggal']); ?></td>
+							<td style="color:#000;"><?= $k['keterangan'] ?></td>
 							<td>
 								<form action="<?= base_url().'download_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
 									<button class="download" type="submit" name="button">Download</button>
@@ -100,3 +100,12 @@ function tutup(){
 	document.getElementById('modal_notif_error').style.display = 'none';
 }
 </script>
+<?php
+function tgl_indo($tanggal){
+  $bulan = array ( 1 =>   'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
+  $pecahkan = explode('-', $tanggal);
+  // variabel pecahkan 0 = tanggal
+  // variabel pecahkan 1 = bulan
+  // variabel pecahkan 2 = tahun
+  return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+} ?>

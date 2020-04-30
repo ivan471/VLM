@@ -1,12 +1,12 @@
 <section class="section" id="feature">
 	<div class="container">
-		<div class="col-md-8 mx-auto">
+		<div class="col-md-7 mx-auto">
 			<div class="card">
 				<div class="card-header">
 					<h3>Tambah Akun Admin Baru</h3>
 				</div>
 				<div class="card-body">
-					<form class="" action="<?= base_url().'save' ?>" method="post">
+					<form action="<?= base_url().'save' ?>" method="post">
 						<div class="form-group">
 							<label for="nama">Nama Lengkap</label>
 							<input type="text" class="form-control" name="nama" id="nama" required>
@@ -40,7 +40,7 @@
 							<label for="umur">Umur</label>
 							<input type="number" class="form-control" name="umur" id="umur" required>
 						</div>
-						<button type="submit" class="btn btn-primary">Simpan</button>
+						<button type="submit" class="save float-right">Simpan</button>
 					</form>
 				</div>
 			</div>

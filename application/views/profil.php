@@ -30,7 +30,7 @@
 						<form class="" action="<?= base_url().'upload/'.$profil['id_user'] ?>" method="post" enctype="multipart/form-data">
 							<label for="">Upload Gambar Profil</label>
 							<input type="file" id="upload" name="gambar" required>
-							<button type="submit" name="button">Upload</button>
+							<button type="submit" name="button" class="save">Upload</button>
 						</form>
 					</div>
 				</div>

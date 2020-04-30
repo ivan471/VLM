@@ -77,7 +77,7 @@
               </div>
               <div class="card-body">
                 <div style="overflow-y:scroll;height:100px;">
-                  <p><?= $k['deskripsi'] ?></p>
+                  <p style="color:#000;"><?= $k['deskripsi'] ?></p>
                 </div>
                 <?php if ($this->session->status == '1'): ?>
                   <a href="<?= base_url().'edit/'.$k['id'] ?>" class="download float-left">Edit</a>
