@@ -58,14 +58,16 @@
 					</thead>
 					<tbody>
 						<?php foreach ($files as $k): ?>
-							<td style="color:#000;"><?= $k['nama_file'] ?></td>
-							<td style="text-align: center; color:#000;"><?= tgl_indo($k['tanggal']); ?></td>
-							<td style="color:#000;"><?= $k['keterangan'] ?></td>
-							<td>
-								<form action="<?= base_url().'download_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
-									<button class="download" type="submit" name="button">Download</button>
-								</form>
-							</td>
+							<tr>
+								<td style="color:#000;"><?= $k['nama_file'] ?></td>
+								<td style="text-align: center; color:#000;"><?= tgl_indo($k['tanggal']); ?></td>
+								<td style="color:#000;"><?= $k['keterangan'] ?></td>
+								<td>
+									<form action="<?= base_url().'download_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
+										<button class="download" type="submit" name="button">Download</button>
+									</form>
+								</td>
+							</tr>
 						<?php endforeach; ?>
 					</tbody>
 				</table>
