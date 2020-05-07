@@ -31,7 +31,7 @@ class Belajar extends CI_Controller {
 				$this->load->template('belajar',$data);
 			}
 		}else{
-			$data['pesan']="2";
+			$data['pesan']="3";
 			$data['files']= $this->model_data->tampilkan_file();
 			$this->load->template('belajar',$data);
 		}

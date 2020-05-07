@@ -21,11 +21,19 @@
 						</center>
 					</div>
 					<div class="card-body">
-						<?php if ($pesan == "1"): ?>
+						<?php if ($pesan == "1"){ ?>
 							<div class="alert alert-success" role="alert">
 								File PDF berhasil diupload.
 							</div>
-						<?php endif; ?>
+						<?php }elseif ($pesan == "2"){ ?>
+							<div class="alert alert-danger" role="alert">
+								Gagal disimpan.
+							</div>
+						<?php }elseif ($pesan == "3"){ ?>
+							<div class="alert alert-danger" role="alert">
+								Gagal diupload.
+							</div>
+						<?php } ?>
 						<form method="post" action="<?= base_url().'save' ?>"enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-sm-3">
