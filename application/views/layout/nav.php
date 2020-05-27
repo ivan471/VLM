@@ -48,7 +48,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <?php if ($this->session->status == '1') { ?>
-                <a class="dropdown-item" href="<?= base_url().'list_admin' ?>">Tambah Akun Admin</a>
+                <a class="dropdown-item" href="<?= base_url().'list_admin' ?>">List Admin</a>
                 <a class="dropdown-item" href="<?= base_url().'members' ?>">Members</a>
               <?php } ?>
               <a class="dropdown-item" href="<?= base_url().'profil/'.$this->session->uid ?>">Profil</a>

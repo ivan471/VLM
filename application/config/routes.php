@@ -26,6 +26,7 @@ $route['simpan'] 									= 'Event/gambar';
 $route['list_admin'] 							= 'Admin';
 $route['add_admin'] 							= 'Admin/add_admin';
 $route['proses_send'] 						= 'Admin/send';
+$route['text1'] 										= 'Admin/text';
 //Belajar
 $route['belajar'] 								= 'Belajar';
 $route['download_file/(:any)'] 				= 'Belajar/download/$1';

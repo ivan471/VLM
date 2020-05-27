@@ -1,3 +1,8 @@
+<?php
+//index.php
+$minimum_range = 0;
+$maximum_range = 80;
+?>
 <section class="section section-top section-full">
   <!-- Cover -->
   <div class="bg-cover center" style="background-image: url(assets/cover.jpg); height:auto;"></div>
@@ -38,6 +43,7 @@
                 <label>Gambar</label><br>
                 <label>Pilihan Umur</label><br>
                 <label>Keterangan</label>
+                <div id="slider-range"></div>
               </div>
               <div class="col-sm-9">
                 <input class="mb-2" id="file" type="file" name="foto" accept="image/jpeg, image/x-png"  onchange="ValidateSize(this)"><br>
@@ -46,10 +52,17 @@
                 <label for="antara">Pilihan Umur</label>
                 <input type="radio" name="umur" value="2" onclick="Check()" id="antara" class="ml-2">
                 <div id="pilihan" style="display:none">
-                  <label for="umur1" class="mr-2">Dari Umur</label>
-                  <input type="number" name="umur1" value=""><br>
-                  <label for="umur2" class="mr-2">Sampai Umur</label>
-                  <input type="number" name="umur2" value="">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <input type="text" name="umur1" id="minimum_range" class="form-control" value="<?= $minimum_range; ?>" />
+                    </div>
+                    <div class="col-md-8" style="padding-top:12px">
+                      <div id="price_range"></div>
+                    </div>
+                    <div class="col-md-2">
+                      <input type="text" name="umur2" id="maximum_range" class="form-control" value="<?= $maximum_range; ?>" />
+                    </div>
+                  </div>
                 </div>
                 <textarea class="form-control mb-2" name="deskripsi" id="deskripsi" placeholder="Masukkan Keterangan Event" required></textarea>
               </div>
@@ -157,4 +170,17 @@ function ValidateSize(file) {
 function tutup(){
   document.getElementById('modal_notif_error').style.display = 'none';
 }
+$(document).ready(function(){
+
+  $('#price_range').slider({
+    range:true,
+    min:0,
+    max:80,
+    values:[<?php echo $minimum_range; ?>, <?php echo $maximum_range; ?>],
+    slide:function(event, ui){
+      $("#minimum_range").val(ui.values[0]);
+      $('#maximum_range').val(ui.values[1]);
+    }
+  });
+});
 </script>

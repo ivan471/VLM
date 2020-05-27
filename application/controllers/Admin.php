@@ -12,6 +12,7 @@ class Admin extends CI_Controller {
 		if ($this->session->status == '1') {
 			$this->model_user->tambah_umur();
 			$data['list'] = $this->model_user->data_admin();
+			$data['admin'] = $this->model_user->admin();
 			$this->load->template('admin/list_admin', $data);
 		}
 	}
@@ -25,5 +26,4 @@ class Admin extends CI_Controller {
 		$this->model_user->add_admin();
 		redirect('/');
 	}
-	
 }

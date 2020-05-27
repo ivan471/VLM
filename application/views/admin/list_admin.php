@@ -3,12 +3,14 @@
 		<div class="col-md-11 mx-auto">
 			<div class="card">
 				<div class="card-header">
-					<h3>Daftar Admin</h3>
+					<h3>List Admin</h3>
 				</div>
 				<div class="card-body">
-					<form class="mb-3" action="<?= base_url().'add_admin' ?>" method="post">
-						<button type="submit" name="button" class="save">Tambah Akun Admin</button>
-					</form>
+					<?php if ($admin['count(*)'] == '1'): ?>
+						<form class="mb-3" action="<?= base_url().'add_admin' ?>" method="post">
+							<button type="submit" name="button" class="save">Tambah Akun Admin</button>
+						</form>
+					<?php endif; ?>
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -28,6 +30,7 @@
 								<td width="10%" style="color:#000;"><?= $admin['email'] ?></td>
 								<td style="color:#000;"><?= $admin['umur'] ?></td>
 								<td style="color:#000;"><?= $admin['no_hp'] ?></td>
+								<td width="15%"><a href="<?= base_url()?>" class="download">Ubah Status</a></td>
 							</tr>
 							<?php $id++; endforeach; ?>
 						</tbody>

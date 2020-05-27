@@ -27,6 +27,10 @@ class Model_user extends CI_Model{
     $query = $this->db->query("SELECT * FROM users WHERE status='1'");
     return $query->result_array();
   }
+  public function admin(){
+    $query = $this->db->query("SELECT count(*) FROM users WHERE status='1'");
+    return $query->row_array();
+  }
   public function register(){
     $data = [
       'nama' => $this->input->post('nama'),

@@ -64,12 +64,14 @@ class Event extends CI_Controller {
 					}
 				}
 				$data['kq']="1";
+				$data['event']= $this->model_data->event();
 				$this->load->template('event',$data);
 			}else {
 				echo "batal";
 			}
 		}else{
 			$data['kq']="2";
+			$data['event']= $this->model_data->event();
 			$this->load->template('event',$data);
 		}
 	}
