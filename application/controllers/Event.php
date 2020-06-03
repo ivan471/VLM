@@ -11,6 +11,10 @@ class Event extends CI_Controller {
 		$data['event']= $this->model_data->event();
 		$this->load->template('event',$data);
 	}
+	public function add_event(){
+		$data['kq'] ="0";
+		$this->load->template('admin/add_event',$data);
+	}
 	public function editevent($id){
 		if ($this->session->status == '1') {
 			$data['event']= $this->model_data->eventid($id);
@@ -65,14 +69,14 @@ class Event extends CI_Controller {
 				}
 				$data['kq']="1";
 				$data['event']= $this->model_data->event();
-				$this->load->template('event',$data);
+				$this->load->template('admin/add_event',$data);
 			}else {
 				echo "batal";
 			}
 		}else{
 			$data['kq']="2";
 			$data['event']= $this->model_data->event();
-			$this->load->template('event',$data);
+			$this->load->template('admin/add_event',$data);
 		}
 	}
 	public function send($email){

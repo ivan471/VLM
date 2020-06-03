@@ -50,6 +50,7 @@
               <?php if ($this->session->status == '1') { ?>
                 <a class="dropdown-item" href="<?= base_url().'list_admin' ?>">List Admin</a>
                 <a class="dropdown-item" href="<?= base_url().'members' ?>">Members</a>
+                <a class="dropdown-item" href="<?= base_url().'add_event' ?>">Input Event</a>
               <?php } ?>
               <a class="dropdown-item" href="<?= base_url().'profil/'.$this->session->uid ?>">Profil</a>
               <a class="dropdown-item" href="<?= base_url().'logout' ?>">Logout</a>

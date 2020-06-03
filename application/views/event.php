@@ -1,8 +1,3 @@
-<?php
-//index.php
-$minimum_range = 0;
-$maximum_range = 80;
-?>
 <section class="section section-top section-full">
   <!-- Cover -->
   <div class="bg-cover center" style="background-image: url(assets/cover.jpg); height:auto;"></div>
@@ -17,122 +12,33 @@ $maximum_range = 80;
 </section>
 <section class="section" id="feature">
   <div class="container">
-    <!-- <form class="was-validated" action="" method="post"> -->
-    <?php if ($this->session->status == '1'): ?>
-      <div class="col-md-8 mb-3 mb-md-0 mx-auto">
-        <div class="card">
-          <div class="card-header">
-            <center>
-              <h3>Input Event</h3>
-            </center>
+    <div class="row mt-2">
+      <?php foreach ($event as $k): ?>
+        <div class="col-md-4 mb-3">
+          <div class="shadow card">
+            <div class="bingkai-gambar">
+              <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" class="responsive gmbr1">
+            </div>
+            <div class="card-body">
+              <div style="height:150px;">
+                <p style="color:#000;"><?php echo substr($k['deskripsi'], 0, 200); ?></p>
+              </div>
+              <?php if ($this->session->status == '1'): ?>
+                <a href="<?= base_url().'edit/'.$k['id'] ?>" class="download float-left">Edit</a>
+                <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="delete float-right">Hapus</a>
+              <?php endif; ?>
+            </div>
           </div>
-          <div class="card-body">
-            <?php if ($kq == "1"): ?>
-              <div class="alert alert-success" role="alert">
-                Pesan Berhasil Terkirim.
-              </div>
-            <?php endif;
-            if ($kq == "2"): ?>
-            <div class="alert alert-danger" role="alert">
-              Pesan Gagal terkirim.
-            </div>
-          <?php endif; ?>
-          <form id="form_event" method="post" action="<?= base_url().'simpan' ?>"enctype="multipart/form-data">
-            <div class="row">
-              <div class="col-sm-3">
-                <label>Gambar</label><br>
-                <label>Pilihan Umur</label><br>
-                <label>Keterangan</label>
-                <div id="slider-range"></div>
-              </div>
-              <div class="col-sm-9">
-                <input class="mb-2" id="file" type="file" name="foto" accept="image/jpeg, image/x-png"  onchange="ValidateSize(this)"><br>
-                <label for="semua">Semua Umur</label>
-                <input type="radio" name="umur" value="1" onclick="Check()" id="semua" class="mr-5 ml-2" checked>
-                <label for="antara">Pilihan Umur</label>
-                <input type="radio" name="umur" value="2" onclick="Check()" id="antara" class="ml-2">
-                <div id="pilihan" style="display:none">
-                  <div class="row">
-                    <div class="col-md-2">
-                      <input type="text" name="umur1" id="minimum_range" class="form-control" value="<?= $minimum_range; ?>" />
-                    </div>
-                    <div class="col-md-8" style="padding-top:12px">
-                      <div id="price_range"></div>
-                    </div>
-                    <div class="col-md-2">
-                      <input type="text" name="umur2" id="maximum_range" class="form-control" value="<?= $maximum_range; ?>" />
-                    </div>
-                  </div>
-                </div>
-                <textarea class="form-control mb-2" name="deskripsi" id="deskripsi" placeholder="Masukkan Keterangan Event" required></textarea>
-              </div>
-            </div>
-            <center>
-              <button type="submit" class="save mb-2" id="btn_save">Simpan</button>
-            </center>
-          </form>
         </div>
-      </div>
-    </div>
-  <?php endif; ?>
-  <!-- </form> -->
-  <div class="shadow card mt-3">
-    <div class="card-header">
-      <h2>Daftar Event</h2>
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <?php foreach ($event as $k): ?>
-          <div class="col-md-4 mb-3">
-            <div class="shadow card">
-              <div class="bingkai-gambar">
-                <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" class="responsive gmbr1">
-              </div>
-              <div class="card-body">
-                <div style="overflow-y:scroll;height:100px;">
-                  <p style="color:#000;"><?= $k['deskripsi'] ?></p>
-                </div>
-                <?php if ($this->session->status == '1'): ?>
-                  <a href="<?= base_url().'edit/'.$k['id'] ?>" class="download float-left">Edit</a>
-                  <a href="<?= base_url().'hapus/'.$k['id'] ?>" class="delete float-right">Hapus</a>
-                <?php endif; ?>
-              </div>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      </div>
+      <?php endforeach; ?>
     </div>
   </div>
-</div>
 </section>
 <!-- The Modal Image-->
 <div id="myModal" class="modal">
   <div class="modal-body">
     <img class="modal-content" id="img01">
     <span class="close" id="close">&times;</span>
-  </div>
-</div>
-
-<div class="modal" id="modal_notif" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <p>Pesan event sudah terkirim</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="btn_close" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal" id="modal_notif_error" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <p>Ukuran File Melebihi 4 MB. Silakan Pilih lagi file dibawah 4MB.</p>
-      </div>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="tutup()">Close</button>
-    </div>
   </div>
 </div>
 <script type="text/javascript">
@@ -153,34 +59,4 @@ var span = document.getElementById("close");
 span.onclick = function() {
   modal.style.display = "none";
 }
-function Check() {
-  if (document.getElementById('antara').checked) {
-    document.getElementById('pilihan').style.display = 'block';
-  } else {
-    document.getElementById('pilihan').style.display = 'none';
-  }
-}
-function ValidateSize(file) {
-  var modal = document.getElementById('modal_notif_error');
-  var FileSize = file.files[0].size / 1024 / 1024; // in MB
-  if (FileSize > 4) {
-    modal.style.display = 'block';
-  }
-}
-function tutup(){
-  document.getElementById('modal_notif_error').style.display = 'none';
-}
-$(document).ready(function(){
-
-  $('#price_range').slider({
-    range:true,
-    min:0,
-    max:80,
-    values:[<?php echo $minimum_range; ?>, <?php echo $maximum_range; ?>],
-    slide:function(event, ui){
-      $("#minimum_range").val(ui.values[0]);
-      $('#maximum_range').val(ui.values[1]);
-    }
-  });
-});
 </script>

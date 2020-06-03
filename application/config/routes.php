@@ -18,6 +18,7 @@ $route['simpan_pemberitahuan'] 		= 'Sembahyang/tambah';
 $route['delete_sembayang/(:any)'] = 'Sembahyang/delete/$1';
 //Event
 $route['event'] 									= 'Event';
+$route['add_event'] 							= 'Event/add_event';
 $route['hapus/(:any)'] 						= 'Event/hapus/$1';
 $route['edit/(:any)'] 						= 'Event/editevent/$1';
 $route['edit_event/(:any)'] 			= 'Event/edit/$1';
