@@ -13,7 +13,6 @@
           <p>In expedita sapiente cumque enim dicta similique, animi adipisci quia et quo quod numquam, veniam eligendi reprehenderit .</p>
         </div>
       </div>
-
       <div class="col-lg-2 ml-lg-auto col-md-2">
 
       </div>
@@ -30,7 +29,6 @@
       </div>
     </div>
     <!-- / .row -->
-
     <div class="row justify-content-md-center footer-copy">
       <div class="col-lg-8 col-md-6 col-sm-6 text-center">
         <p class="lead text-white-50">&copy; Copyright Reserved to Themeturn | Design and Developed by Esrat </p>
@@ -48,9 +46,6 @@
 
 <!-- Plugin JavaScript -->
 <script src="<?= base_url().'assets/js/jquery.easing.min.js' ?>"></script>
-<!-- Theme JS -->
-<script src="assets/js/theme.js"></script>
-
 </body>
 
 </html>

@@ -11,7 +11,8 @@ $route['logout'] 									= 'VLM/logout';
 $route['profil/(:any)'] 					= 'VLM/profil/$1';
 //Member
 $route['members'] 								= 'Member';
-$route['perubahan/(:any)'] 				= 'Member/perubahan/$1';
+$route['change/(:any)'] 					= 'Member/simpan/$1';
+$route['ubah_status/(:any)'] 			= 'Member/ubah/$1';
 //Pemberitahuan
 $route['sembahyang'] 							= 'Sembahyang';
 $route['simpan_pemberitahuan'] 		= 'Sembahyang/tambah';
@@ -25,16 +26,12 @@ $route['edit_event/(:any)'] 			= 'Event/edit/$1';
 $route['simpan'] 									= 'Event/gambar';
 //Admin
 $route['list_admin'] 							= 'Admin';
-$route['add_admin'] 							= 'Admin/add_admin';
-$route['proses_send'] 						= 'Admin/send';
-$route['text1'] 										= 'Admin/text';
+$route['proses_send'] 						= 'Admin/save/$1';
+$route['ubah/(:any)'] 						= 'Admin/ubah/#1';
 //Belajar
 $route['belajar'] 								= 'Belajar';
-$route['download_file/(:any)'] 				= 'Belajar/download/$1';
+$route['download_file/(:any)'] 		= 'Belajar/download/$1';
 $route['save'] 										= 'Belajar/save';
-// $route['hapus/(:any)'] 						= 'Event/hapus/$1';
-// $route['edit/(:any)'] 						= 'Event/editevent/$1';
-// $route['edit_event/(:any)'] 			= 'Event/edit/$1';
 
 $route['default_controller'] 			= 'VLM';
 $route['404_override'] 						= '';

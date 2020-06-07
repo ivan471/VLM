@@ -6,7 +6,7 @@
 					<h3>Tambah Akun Admin Baru</h3>
 				</div>
 				<div class="card-body">
-					<form action="<?= base_url().'save' ?>" method="post">
+					<form action="<?= base_url().'tambah_admin' ?>" method="post">
 						<div class="form-group">
 							<label for="nama">Nama Lengkap</label>
 							<input type="text" class="form-control" name="nama" id="nama" required>

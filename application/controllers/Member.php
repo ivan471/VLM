@@ -39,4 +39,16 @@ class Member extends CI_Controller {
 			$this->load->template('admin/perubahan', $data);
 		}
 	}
+	public function simpan($id){
+		if ($this->session->status == '1') {
+			$this->model_user->simpan_kondisi($id);
+			redirect('/members');
+		}
+	}
+	public function ubah($id){
+		if ($this->session->status == '1') {
+			$this->model_user->simpan_status($id);
+			redirect('/members');
+		}
+	}
 }

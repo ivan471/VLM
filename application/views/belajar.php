@@ -1,6 +1,6 @@
 <section class="section section-top section-full">
 	<!-- Cover -->
-	<div class="bg-cover center" style="background-image: url(assets/cover.jpg); height:auto;"></div>
+	<div class="bg-cover center" style="background-image: url(assets/img/cover.jpg); height:auto;"></div>
 	<!-- Overlay -->
 	<div class="bg-overlay"></div>
 	<div class="container">

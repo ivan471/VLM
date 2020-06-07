@@ -24,6 +24,7 @@
 								<th scope="col">E-mail</th>
 								<th scope="col">Umur</th>
 								<th scope="col">No WA</th>
+								<th>Ubah Kondisi</th>
 								<th>Ubah Status</th>
 							</tr>
 						</thead>
@@ -37,7 +38,8 @@
 								<td><?= $m['email'] ?></td>
 								<td><?= $m['umur'] ?></td>
 								<td><?= $m['no_hp'] ?></td>
-								<td width="15%"><a href="<?= base_url().'perubahan/'.$m['id_user']?>" class="download">Ubah</a></td>
+								<td width="15%"><a href="<?= base_url().'change/'.$m['id_user']?>" onclick="return confirm('Apakah ingin ganti kondisi member ini?');" class="download">Ubah</a></td>
+								<td width="15%"><a href="<?= base_url().'ubah_status/'.$m['id_user']?>" onclick="return confirm('Apakah ingin menjadikan member ini jadi admin?');" class="download">Ubah</a></td>
 							</tr>
 						<?php $i++; endforeach; ?>
 						</tbody>

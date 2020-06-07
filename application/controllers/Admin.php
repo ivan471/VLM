@@ -16,14 +16,12 @@ class Admin extends CI_Controller {
 			$this->load->template('admin/list_admin', $data);
 		}
 	}
-	public function add_admin(){
-		if ($this->session->status == '1') {
-			$this->model_user->tambah_umur();
-			$this->load->template('admin/add_admin');
-		}
-	}
 	function save(){
 		$this->model_user->add_admin();
+		redirect('/');
+	}
+	function ubah($id){
+		$this->model_user->ubah_admin($id);
 		redirect('/');
 	}
 }

@@ -42,7 +42,7 @@
 						</div> <!-- form-group// -->
 						<div class="form-group input-group">
 							<div class="input-group-prepend">
-								<span class="input-group-text"> <img src="<?= base_url().'assets/icon_umur.bmp' ?>" width="28px" height="28px" alt=""> </span>
+								<span class="input-group-text"> <img src="<?= base_url().'assets/img/icon_umur.bmp' ?>" width="28px" height="28px" alt=""> </span>
 							</div>
 							<input name="umur" class="form-control" placeholder="Masukkan Umur Anda" type="number" required>
 						</div> <!-- form-group// -->

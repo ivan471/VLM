@@ -45,6 +45,20 @@ class Model_user extends CI_Model{
     ];
     $this->db->insert( 'users', $data );
   }
+  public function add_admin(){
+    $data = [
+      'nama' => $this->input->post('nama'),
+      'password' => md5($this->input->post('password')),
+      'tgl_lahir' => $this->input->post('tgl_lahir'),
+      'tempat_lahir' => $this->input->post('tmpt_lahir'),
+      'no_hp' => $this->input->post('no_hp'),
+      'umur' => $this->input->post('umur'),
+      'jenis_kelamin' => $this->input->post('jk'),
+      'email' => $this->input->post('email'),
+      'status' => "1"
+    ];
+    $this->db->insert( 'users', $data );
+  }
   public function simpan($file,$id){
     $this->db->where('id_user',$id);
     $query = $this->db->get('users');
@@ -76,5 +90,20 @@ class Model_user extends CI_Model{
         $this->db->update('users', $data);
       }
     }
+  }
+  public function simpan_kondisi($id){
+    $data = array('kondisi' => '2');
+    $this->db->where('id_user', $id);
+    $this->db->update('users', $data);
+  }
+  public function ubah_admin($id){
+    $data = array('status' => '2');
+    $this->db->where('id_user', $id);
+    $this->db->update('users', $data);
+  }
+  public function simpan_status($id){
+    $data = array('status' => '1');
+    $this->db->where('id_user', $id);
+    $this->db->update('users', $data);
   }
 }

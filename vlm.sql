@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Mar 2020 pada 08.57
--- Versi server: 10.4.10-MariaDB
--- Versi PHP: 7.3.12
+-- Waktu pembuatan: 07 Jun 2020 pada 09.32
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -31,17 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `event` (
   `id` int(11) NOT NULL,
   `deskripsi` text NOT NULL,
-  `gambar` varchar(32) NOT NULL
+  `gambar` varchar(32) NOT NULL,
+  `tanggal` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `event`
---
-
-INSERT INTO `event` (`id`, `deskripsi`, `gambar`) VALUES
-(1, '123', '65117.jpg'),
-(2, 'test pengiriman 1', '16911.jpg'),
-(3, 'test pengiriman 2', '65131.jpg');
 
 -- --------------------------------------------------------
 
@@ -67,17 +58,6 @@ CREATE TABLE `pemberitahuan` (
   `isi` text NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `pemberitahuan`
---
-
-INSERT INTO `pemberitahuan` (`id`, `isi`, `tanggal`) VALUES
-(2, 'Test pemberitahuan ', '2020-03-09'),
-(3, 'test 2', '2020-03-09'),
-(4, 'test', '2020-03-09'),
-(5, 'test', '2020-03-09'),
-(6, 'test pengiriman', '2020-03-09');
 
 -- --------------------------------------------------------
 
@@ -107,7 +87,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `nama`, `password`, `tgl_lahir`, `tempat_lahir`, `email`, `umur`, `no_hp`, `jenis_kelamin`, `gambar`, `kondisi`, `status`) VALUES
 (1, 'andre', 'e10adc3949ba59abbe56e057f20f883e', '1998-03-03', 'makassar', 'billytanyawan6@gmail.com', 20, '082131646946', 'Pria', 'default.png', 1, 2),
 (2, 'Admin', '21232f297a57a5a743894a0e4a801fc3', '1997-02-04', 'makassar', 'admin@gmail.com', 23, '08231646464', 'Pria', 'default.png', 1, 1),
-(3, 'Ivan Darmawan', 'e10adc3949ba59abbe56e057f20f883e', '1997-05-24', 'Makassar', 'theivanjackdark@gmail.com', 22, '082131646946', 'Pria', 'images_(2).jpg', 1, 2),
+(3, 'Ivan Darmawan', 'e10adc3949ba59abbe56e057f20f883e', '1997-05-24', 'Makassar', 'theivanjackdark@gmail.com', 22, '082131646946', 'Pria', 'images_(2).jpg', 1, 1),
 (4, 'Ferdi', 'e10adc3949ba59abbe56e057f20f883e', '1997-04-25', 'Makassar', 'thevanjackdark3@gmail.com', 22, '082131646946', 'Pria', 'default.png', 1, 2);
 
 --
@@ -146,7 +126,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `file`
@@ -158,7 +138,7 @@ ALTER TABLE `file`
 -- AUTO_INCREMENT untuk tabel `pemberitahuan`
 --
 ALTER TABLE `pemberitahuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

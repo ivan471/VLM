@@ -6,11 +6,6 @@
 					<h3>List Admin</h3>
 				</div>
 				<div class="card-body">
-					<?php if ($admin['count(*)'] == '1'): ?>
-						<form class="mb-3" action="<?= base_url().'add_admin' ?>" method="post">
-							<button type="submit" name="button" class="save">Tambah Akun Admin</button>
-						</form>
-					<?php endif; ?>
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -19,6 +14,7 @@
 								<th scope="col" style="color:#000;">E-mail</th>
 								<th scope="col" style="color:#000;">Umur</th>
 								<th scope="col" style="color:#000;">Nomor WA</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -30,7 +26,9 @@
 								<td width="10%" style="color:#000;"><?= $admin['email'] ?></td>
 								<td style="color:#000;"><?= $admin['umur'] ?></td>
 								<td style="color:#000;"><?= $admin['no_hp'] ?></td>
-								<td width="15%"><a href="<?= base_url()?>" class="download">Ubah Status</a></td>
+								<?php if ($admin['nama'] != 'Admin') {?>
+									<td width="15%"><a href="<?= base_url('ubah/'.$admin['id_user'])?>" class="download">Ubah</a></td>
+								<?php } ?>
 							</tr>
 							<?php $id++; endforeach; ?>
 						</tbody>
