@@ -22,6 +22,6 @@ class Admin extends CI_Controller {
 	}
 	function ubah($id){
 		$this->model_user->ubah_admin($id);
-		redirect('/');
+		redirect('/list_admin');
 	}
 }
