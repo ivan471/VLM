@@ -24,6 +24,7 @@ $route['hapus/(:any)'] 						= 'Event/hapus/$1';
 $route['edit/(:any)'] 						= 'Event/editevent/$1';
 $route['edit_event/(:any)'] 			= 'Event/edit/$1';
 $route['simpan'] 									= 'Event/gambar';
+$route['detail/(:any)'] 					= 'Event/detail/$1';
 //Admin
 $route['list_admin'] 							= 'Admin';
 $route['proses_send'] 						= 'Admin/save/$1';

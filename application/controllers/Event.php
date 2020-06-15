@@ -9,7 +9,7 @@ class Event extends CI_Controller {
 	public function index(){
 		$data['kq'] ="0";
 		$data['event']= $this->model_data->event();
-		$this->load->template('event',$data);
+		$this->load->template('event/event',$data);
 	}
 	public function add_event(){
 		$data['kq'] ="0";
@@ -18,8 +18,12 @@ class Event extends CI_Controller {
 	public function editevent($id){
 		if ($this->session->status == '1') {
 			$data['event']= $this->model_data->eventid($id);
-			$this->load->template('editevent',$data);
+			$this->load->template('event/edit',$data);
 		}
+	}
+	public function detail($id){
+		$data['event']= $this->model_data->eventid($id);
+		$this->load->template('event/detail',$data);
 	}
 	public function hapus($id){
 		if ($this->session->status == '1') {
@@ -48,7 +52,6 @@ class Event extends CI_Controller {
 		$this->load->library('upload', $config); //load konfigurasi uploadnya
 		if ($this->upload->do_upload('foto')){ //lakukan upload dan cek jika berhasil
 			$file = $this->upload->data();
-			// redirect('/');
 			if (isset($file)) {
 				$this->model_data->simpan($file);
 				$umur = $this->input->post('umur');
@@ -59,9 +62,19 @@ class Event extends CI_Controller {
 						$this->send($email);
 					}
 				}else {
-					$awal = $this->input->post('umur1');
-					$akhir = $this->input->post('umur2');
-					$query = $this->db->query("SELECT * FROM users where status='2' and umur between '".$awal."' and '".$akhir."'");
+					$umur1 = $this->input->post('umur1');
+					if ($umur1 == '1') {
+						$awal = '6';
+						$akhir = '16';
+						$query = $this->db->query("SELECT * FROM users where status='2' and umur between '".$awal."' and '".$akhir."'");
+					}elseif ($umur1 == '2') {
+						$awal = '17';
+						$akhir = '40';
+						$query = $this->db->query("SELECT * FROM users where status='2' and umur between '".$awal."' and '".$akhir."'");
+					}else {
+						$awal = '40';
+						$query = $this->db->query("SELECT * FROM users where status='2' and umur > '".$awal."'");
+					}
 					foreach ($query->result_array() as $row) {
 						$email = $row['email'];
 						$this->send($email);
@@ -83,20 +96,14 @@ class Event extends CI_Controller {
 		$this->load->library('mailer');
 		$email_penerima = $email;
 		$subjek = "Pemberitahuan";
-		$pesan = $this->input->post('deskripsi');
-		$attachment = $_FILES['foto'];
+		$pesan = "";
 		$content = $this->load->view('content', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
 		$sendmail = array(
 			'email_penerima'=>$email_penerima,
 			'subjek'=>$subjek,
-			'content'=>$content,
-			'attachment'=>$attachment
+			'content'=>$content
 		);
-		if(empty($attachment['name'])){ // Jika tanpa attachment
-			$send = $this->mailer->send($sendmail); // Panggil fungsi send yang ada di librari Mailer
-		}else{ // Jika dengan attachment
-			$send = $this->mailer->send_with_attachment($sendmail); // Panggil fungsi send_with_attachment yang ada di librari Mailer
-		}
+		$send = $this->mailer->send($sendmail); // Panggil fungsi send yang ada di librari Mailer
 	}
 
 }
