@@ -96,7 +96,7 @@ class Event extends CI_Controller {
 		$this->load->library('mailer');
 		$email_penerima = $email;
 		$subjek = "Pemberitahuan";
-		$pesan = "";
+		$pesan = "1";
 		$content = $this->load->view('content', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
 		$sendmail = array(
 			'email_penerima'=>$email_penerima,
