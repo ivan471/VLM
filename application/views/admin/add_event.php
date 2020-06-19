@@ -27,9 +27,9 @@
 								<label for="antara">Kategori Umur</label>
 								<div id="pilihan" class="mb-2" style="display:none;">
 									<select class="form-control" name="umur1">
-										<option value="1">Anak - anak</option>
-										<option value="2">Pemuda</option>
-										<option value="3">Orang Tua</option>
+										<option value="1">Anak - anak (6-16 thn)</option>
+										<option value="2">Pemuda (17-40 thn)</option>
+										<option value="3">Orang Tua (40 thn ke atas)</option>
 									</select>
 								</div>
 							</div>

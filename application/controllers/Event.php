@@ -54,14 +54,17 @@ class Event extends CI_Controller {
 			$file = $this->upload->data();
 			if (isset($file)) {
 				$this->model_data->simpan($file);
+				$query = $this->db->query("SELECT * FROM event ORDER BY id DESC LIMIT 1");
+				$row = $query->row();
+				$id = $row->id;
 				$umur = $this->input->post('umur');
 				if ($umur == '1') {
 					$query = $this->db->query("SELECT * FROM users where status='2'");
 					foreach ($query->result_array() as $row) {
 						$email = $row['email'];
-						$this->send($email);
+						$this->send($email,$id);
 					}
-				}else {
+				}else{
 					$umur1 = $this->input->post('umur1');
 					if ($umur1 == '1') {
 						$awal = '6';
@@ -77,7 +80,7 @@ class Event extends CI_Controller {
 					}
 					foreach ($query->result_array() as $row) {
 						$email = $row['email'];
-						$this->send($email);
+						$this->send($email,$id);
 					}
 				}
 				$data['kq']="1";
@@ -92,11 +95,11 @@ class Event extends CI_Controller {
 			$this->load->template('admin/add_event',$data);
 		}
 	}
-	public function send($email){
+	public function send($email,$id){
 		$this->load->library('mailer');
 		$email_penerima = $email;
 		$subjek = "Pemberitahuan";
-		$pesan = "1";
+		$pesan = $id;
 		$content = $this->load->view('content', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
 		$sendmail = array(
 			'email_penerima'=>$email_penerima,
