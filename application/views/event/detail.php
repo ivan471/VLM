@@ -13,7 +13,7 @@
 <section class="section" id="feature">
 	<div class="container">
 		<div class="col-md-6 mx-auto">
-			<h3><?= $event['tanggal']; ?></h3>
+			<h2><?= $event['tanggal']; ?></h2>
 			<img src="<?= base_url().'assets/gambar_kegiatan/'.$event['gambar'] ?>" class="mx-auto" alt="">
 			<p class="mt-3"><?= $event['deskripsi']; ?></p>
 		</div>

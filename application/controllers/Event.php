@@ -8,20 +8,24 @@ class Event extends CI_Controller {
 	}
 	public function index(){
 		$data['kq'] ="0";
+		$data['judul'] = "Event";
 		$data['event']= $this->model_data->event();
 		$this->load->template('event/event',$data);
 	}
 	public function add_event(){
 		$data['kq'] ="0";
+		$data['judul'] = "Tambah Event Baru";
 		$this->load->template('admin/add_event',$data);
 	}
 	public function editevent($id){
 		if ($this->session->status == '1') {
+			$data['judul'] = "Edit Event";
 			$data['event']= $this->model_data->eventid($id);
 			$this->load->template('event/edit',$data);
 		}
 	}
 	public function detail($id){
+		$data['judul'] = "Detail Event";
 		$data['event']= $this->model_data->eventid($id);
 		$this->load->template('event/detail',$data);
 	}
@@ -84,6 +88,7 @@ class Event extends CI_Controller {
 					}
 				}
 				$data['kq']="1";
+				$data['judul'] = "Tambah Event Baru";
 				$data['event']= $this->model_data->event();
 				$this->load->template('admin/add_event',$data);
 			}else {
@@ -91,6 +96,7 @@ class Event extends CI_Controller {
 			}
 		}else{
 			$data['kq']="2";
+			$data['judul'] = "Tambah Event Baru";
 			$data['event']= $this->model_data->event();
 			$this->load->template('admin/add_event',$data);
 		}

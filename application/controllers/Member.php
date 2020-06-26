@@ -9,6 +9,7 @@ class Member extends CI_Controller {
 
 	public function index(){
 		if ($this->session->status == '1') {
+			$data['judul'] = "Daftar Member";
 			$this->model_user->tambah_umur();
 			$this->load->library('pagination');
 			// ambil data keyword
@@ -31,12 +32,6 @@ class Member extends CI_Controller {
 			$data['members'] = $this->model_user->all_user($config['per_page'], $data['start'], $data['keyword']);
 			$data['pagination'] = $this->pagination->create_links();
 			$this->load->template('admin/members', $data);
-		}
-	}
-	public function perubahan($id){
-		if ($this->session->status == '1') {
-			$data['members'] = $this->model_user->getuserdata($id);
-			$this->load->template('admin/perubahan', $data);
 		}
 	}
 	public function simpan($id){

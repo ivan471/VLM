@@ -8,6 +8,7 @@ class Belajar extends CI_Controller {
 	}
 	public function index(){
 		$data['pesan'] ="0";
+		$data['judul'] = "Belajar";
 		$data['files']= $this->model_data->tampilkan_file();
 		$this->load->template('belajar', $data);
 	}
@@ -23,15 +24,18 @@ class Belajar extends CI_Controller {
 			if (isset($file)) {
 				$this->model_data->save($file);
 				$data['pesan']="1";
+				$data['judul'] = "Belajar";
 				$data['files']= $this->model_data->tampilkan_file();
 				$this->load->template('belajar',$data);
 			}else {
 				$data['pesan']="2";
+				$data['judul'] = "Belajar";
 				$data['files']= $this->model_data->tampilkan_file();
 				$this->load->template('belajar',$data);
 			}
 		}else{
 			$data['pesan']="3";
+			$data['judul'] = "Belajar";
 			$data['files']= $this->model_data->tampilkan_file();
 			$this->load->template('belajar',$data);
 		}

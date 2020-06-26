@@ -17,6 +17,6 @@
   <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
-  <title>VLM</title>
+  <title><?= $judul; ?></title>
 </head>
 <body id="page-top">

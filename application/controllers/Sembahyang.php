@@ -10,6 +10,7 @@ class Sembahyang extends CI_Controller {
 
 	public function index(){
 		$this->model_user->tambah_umur();
+		$data['judul'] = "Sembayang";
 		$data['pemberitahuan'] = $this->model_data->tampilkan_pemberitahuan();
 		$this->load->template('sembahyang', $data);
 	}

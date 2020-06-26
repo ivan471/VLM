@@ -10,13 +10,17 @@ class VLM extends CI_Controller {
 
 	public function index()
 	{
+		$data['judul'] = "Vihara Lahuta Maitreya";
 		$this->model_user->tambah_umur();
-		$this->load->template('index');
+		$this->load->template('index',$data);
 	}
 	public function profil($id)
 	{
-		$data['profil'] = $this->model_user->profil($id);
-		$this->load->template('profil',$data);
+		if (isset($this->session->uid)) {
+			$data['judul'] = "Profil";
+			$data['profil'] = $this->model_user->profil($id);
+			$this->load->template('profil',$data);
+		}
 	}
 	public function upload($id)
 	{
@@ -39,11 +43,13 @@ class VLM extends CI_Controller {
 		}
 	public function login_page()
 	{
+		$data['judul'] = "Login Akun";
 		$data['cek']= "0";
 		$this->load->template('auth/login', $data);
 	}
 	public function register_page()
 	{
+		$data['judul'] = "Register Akun";
 		$data['cek']= "0";
 		$this->load->template('auth/register',$data);
 	}
@@ -62,6 +68,7 @@ class VLM extends CI_Controller {
 			redirect('/', $data);
 		} else {
 			$data['cek']= "1";
+			$data['judul'] = "Login Akun";
 			$this->load->template('auth/login',$data);
 		}
 	}
@@ -71,6 +78,7 @@ class VLM extends CI_Controller {
 		if ($pass == $pass1) {
 			$this->model_user->register();
 			$data['cek']= "2";
+			$data['judul'] = "Register Akun";
 			$this->load->template('auth/register',$data);
 		}else {
 			$data['cek']= "1";

@@ -1,16 +1,23 @@
 <!-- FOOTER
 ================================================== -->
-<footer class="top-padding bg-dark">
+<footer class="top-padding bg-white">
   <!--Content -->
   <div class="container">
     <div class="row align-self-center">
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-6 col-md-6">
         <div class="footer-widget">
           <!-- Brand -->
-          <a href="#" class="footer-brand text-white">
-            Vihara Lahuta Maitreya
-          </a>
-          <p>In expedita sapiente cumque enim dicta similique, animi adipisci quia et quo quod numquam, veniam eligendi reprehenderit .</p>
+          <div class="row">
+            <div class="col-md-6">
+              <img src="<?= base_url('assets/img/icon.jpg') ?>" alt="">
+            </div>
+            <div class="col-md-6">
+              <h3>Vihara Lahuta Maitreya</h3>
+              <p style="color:gray">Jalan Wahab Tarru, No. 4 Makassar<br>Sulawesi Selatan<br>Indonesia</p>
+            </div>
+
+          </div>
+          <!-- <p>In expedita sapiente cumque enim dicta similique, animi adipisci quia et quo quod numquam, veniam eligendi reprehenderit .</p> -->
         </div>
       </div>
       <div class="col-lg-2 ml-lg-auto col-md-2">
@@ -19,7 +26,7 @@
       <div class="col-lg-3 col-md-4">
         <!-- Links -->
         <ul class="footer-link list-unstyled ml-0 justify-content-end">
-          <li>
+          <li style="color:black">
             <i class="fa fa-mobile"></i> +345-345456
           </li>
           <li>
@@ -31,7 +38,7 @@
     <!-- / .row -->
     <div class="row justify-content-md-center footer-copy">
       <div class="col-lg-8 col-md-6 col-sm-6 text-center">
-        <p class="lead text-white-50">&copy; Copyright Reserved to Themeturn | Design and Developed by Esrat </p>
+        <p class="lead text-black-50">&copy; Copyright Reserved to Themeturn | Design and Developed by Esrat </p>
       </div>
     </div>
   </div>
