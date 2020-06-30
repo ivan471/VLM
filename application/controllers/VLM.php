@@ -65,7 +65,7 @@ class VLM extends CI_Controller {
 			$this->session->status = $user['status'];
 			$this->session->nama = $user['nama'];
 			// kembali ke halaman depan
-			redirect('/', $data);
+			redirect('/');
 		} else {
 			$data['cek']= "1";
 			$data['judul'] = "Login Akun";

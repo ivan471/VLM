@@ -27,7 +27,7 @@
         <!-- Links -->
         <ul class="footer-link list-unstyled ml-0 justify-content-end">
           <li style="color:black">
-            <i class="fa fa-mobile"></i> +345-345456
+            <i class="fa fa-mobile"></i>(0411) 321304
           </li>
           <li>
             <i class="fa fa-location-arrow"></i>
@@ -36,11 +36,11 @@
       </div>
     </div>
     <!-- / .row -->
-    <div class="row justify-content-md-center footer-copy">
+    <!-- <div class="row justify-content-md-center footer-copy">
       <div class="col-lg-8 col-md-6 col-sm-6 text-center">
         <p class="lead text-black-50">&copy; Copyright Reserved to Themeturn | Design and Developed by Esrat </p>
       </div>
-    </div>
+    </div> -->
   </div>
   <!-- / .container -->
 </footer>

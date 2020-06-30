@@ -1,10 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 class Event extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('model_data');
+		require APPPATH.'libraries/phpmailer/src/Exception.php';
+		require APPPATH.'libraries/phpmailer/src/PHPMailer.php';
+		require APPPATH.'libraries/phpmailer/src/SMTP.php';
 	}
 	public function index(){
 		$data['kq'] ="0";
@@ -66,6 +72,7 @@ class Event extends CI_Controller {
 					$query = $this->db->query("SELECT * FROM users where status='2'");
 					foreach ($query->result_array() as $row) {
 						$email = $row['email'];
+						// echo $email;
 						$this->send($email,$id);
 					}
 				}else{
@@ -102,17 +109,29 @@ class Event extends CI_Controller {
 		}
 	}
 	public function send($email,$id){
-		$this->load->library('mailer');
-		$email_penerima = $email;
-		$subjek = "Pemberitahuan";
+		$response = false;
+		$mail = new PHPMailer();
+		// SMTP configuration
+		$mail->isSMTP();
+		$mail->Host     = 'smtp.gmail.com'; //sesuaikan sesuai nama domain hosting/server yang digunakan
+		$mail->SMTPAuth = true;
+		// $mail->SMTPDebug = 2;
+		$mail->Username = 'viharalahutamaitreya@gmail.com'; // user email
+		$mail->Password = 'oitwrjvqvfbazxnr'; // password email
+		$mail->SMTPSecure = 'ssl';
+		$mail->Port     = 465;
+		$mail->setFrom('viharalahutamaitreya@gmail.com', ''); // user email
+		$mail->addAddress($email); //email tujuan pengiriman email
+		// Email subject
+		$mail->Subject = 'Pemberitahuan'; //subject email
+		// Set email format to HTML
+		$mail->isHTML(true);
+		// Email body content
 		$pesan = $id;
 		$content = $this->load->view('content', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
-		$sendmail = array(
-			'email_penerima'=>$email_penerima,
-			'subjek'=>$subjek,
-			'content'=>$content
-		);
-		$send = $this->mailer->send($sendmail); // Panggil fungsi send yang ada di librari Mailer
+		$mail->Body = $content;
+		$mail->send();
+
 	}
 
 }
