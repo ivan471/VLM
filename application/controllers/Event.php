@@ -128,7 +128,7 @@ class Event extends CI_Controller {
 		$mail->isHTML(true);
 		// Email body content
 		$pesan = $id;
-		$content = $this->load->view('content', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
+		$content = $this->load->view('content', array('pesan'=>$pesan,'id'=>'0'), true); // Ambil isi file content.php dan masukan ke variabel $content
 		$mail->Body = $content;
 		$mail->send();
 

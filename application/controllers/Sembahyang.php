@@ -1,11 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 class Sembahyang extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('model_data');
 		$this->load->model('model_user');
+		require APPPATH.'libraries/phpmailer/src/Exception.php';
+		require APPPATH.'libraries/phpmailer/src/PHPMailer.php';
+		require APPPATH.'libraries/phpmailer/src/SMTP.php';
 	}
 
 	public function index(){
@@ -28,16 +32,27 @@ class Sembahyang extends CI_Controller {
 		redirect('/sembahyang');
 	}
 	public function send($email){
-		$this->load->library('mailer');
-		$email_penerima = $email;
-		$subjek = "Pemberitahuan";
-		$pesan = $this->input->post('pemberitahuan');
-		$content = $this->load->view('content', array('pesan'=>$pesan), true); // Ambil isi file content.php dan masukan ke variabel $content
-		$sendmail = array(
-			'email_penerima'=>$email_penerima,
-			'subjek'=>$subjek,
-			'content'=>$content
-		);
-		$send = $this->mailer->send($sendmail); // Panggil fungsi send yang ada di librari Mailer
+		$response = false;
+		$mail = new PHPMailer();
+		// SMTP configuration
+		$mail->isSMTP();
+		$mail->Host     = 'smtp.gmail.com'; //sesuaikan sesuai nama domain hosting/server yang digunakan
+		$mail->SMTPAuth = true;
+		// $mail->SMTPDebug = 2;
+		$mail->Username = 'viharalahutamaitreya@gmail.com'; // user email
+		$mail->Password = 'oitwrjvqvfbazxnr'; // password email
+		$mail->SMTPSecure = 'ssl';
+		$mail->Port     = 465;
+		$mail->setFrom('viharalahutamaitreya@gmail.com', ''); // user email
+		$mail->addAddress($email); //email tujuan pengiriman email
+		// Email subject
+		$mail->Subject = 'Pemberitahuan'; //subject email
+		// Set email format to HTML
+		$mail->isHTML(true);
+		$pesan = '';
+		// Email body content
+		$content = $this->load->view('content', array('pesan'=>$pesan,'id'=>'1'), true); // Ambil isi file content.php dan masukan ke variabel $content
+		$mail->Body = $content;
+		$mail->send();
 	}
 }
