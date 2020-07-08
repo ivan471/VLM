@@ -21,7 +21,6 @@
             <div class="card-body">
               <div style="height:250px;">
                 <h5 style="color:gray;"><?= date_format(date_create($k['tanggal']),"d M Y"); ?></h5>
-                <!-- <h5><?= $k['tanggal']; ?></h5> -->
                 <p style="color:#000;"><?= substr($k['deskripsi'], 0, 220); ?>[...]</p>
               </div>
               <?php if ($this->session->status == '1'): ?>

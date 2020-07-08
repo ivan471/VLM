@@ -8,7 +8,7 @@
 			<h5>Tanggal : <?= date("d M Y"); ?></h5>
 			<p>Untuk melihat detail informasi, silakan klik link berikut ini:</p>
 			<?php if ($id == '0'){ ?>
-				<a href="<?= base_url('detail_event/'.$pesan);  ?>" target="_blank">Klik ini.</a>
+				<a href="<?= base_url('detail/'.$pesan);  ?>" target="_blank">Klik ini.</a>
 			<?php }elseif ($id == '1'){ ?>
 				<a href="<?= base_url('sembahyang');  ?>" target="_blank">Klik ini.</a>
 			<?php }else{ ?>

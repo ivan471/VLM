@@ -12,10 +12,10 @@
 </section>
 <section class="section" id="feature">
 	<div class="container">
-		<div class="col-md-6 mx-auto">
-			<h2><?= $event['tanggal']; ?></h2>
+		<div class="col-md-8 mx-auto">
+			<h4><?= date_format(date_create($event['tanggal']),"d M Y"); ?></h2>
 			<img src="<?= base_url().'assets/gambar_kegiatan/'.$event['gambar'] ?>" class="mx-auto" alt="">
-			<p class="mt-3"><?= $event['deskripsi']; ?></p>
+			<p style="word-wrap:break-word; color:black;" class="mt-3"><?= $event['deskripsi']; ?></p>
 		</div>
 	</div>
 </section>
