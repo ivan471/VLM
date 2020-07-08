@@ -17,6 +17,11 @@ class Belajar extends CI_Controller {
 		$this->load->template('belajar', $data);
 	}
 	public function save(){
+		$directoryName = './assets/pdf/';
+		if(!is_dir($directoryName)){
+			//Directory does not exist, so lets create it.
+			mkdir($directoryName, 0755, true);
+		}
 		$config['upload_path']          = './assets/pdf/';
 		$config['allowed_types']        = 'pdf';
 		$config['max_size']             = '0';
@@ -78,5 +83,9 @@ class Belajar extends CI_Controller {
 		$content = $this->load->view('content', array('pesan'=>$pesan,'id'=>'3'), true); // Ambil isi file content.php dan masukan ke variabel $content
 		$mail->Body = $content;
 		$mail->send();
+	}
+	public function delete_file($id){
+		$this->model_data->delete_pdf($id);
+		redirect('/belajar');
 	}
 }

@@ -54,6 +54,12 @@ class Event extends CI_Controller {
 		echo $response;
 	}
 	public function gambar(){
+		//The name of the directory that we need to create.
+		$directoryName = './assets/gambar_kegiatan/';
+		if(!is_dir($directoryName)){
+			//Directory does not exist, so lets create it.
+			mkdir($directoryName, 0755, true);
+		}
 		$config['upload_path']          = './assets/gambar_kegiatan/';
 		$config['allowed_types']        = 'jpg|png|jpeg';
 		$config['max_size']             = '0';

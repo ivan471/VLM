@@ -60,4 +60,11 @@ class Model_data extends CI_Model{
     $query = $this->db->query("SELECT * from file where id_file='".$id."'");
     return $query->row_array();
   }
+  public function delete_pdf($id){
+    $this->db->where('id_file',$id);
+    $query = $this->db->get('file');
+    $row = $query->row();
+    unlink("./asset/pdf/$row->nama_file");
+    $this->db->delete('file', array('id_file' => $id));
+  }
 }

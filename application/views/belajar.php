@@ -59,9 +59,9 @@
 					<thead>
 						<tr>
 							<th style="width:30%; text-align: center; color:#000;">Nama File</th>
-							<th style="width:15%; text-align: center; color:#000;">Tanggal</th>
+							<th style="width:10%; text-align: center; color:#000;">Tanggal</th>
 							<th style="width:45%; text-align: center; color:#000;">Keterangan</th>
-							<th style="width:10%; text-align: center; color:#000;">Download</th>
+							<th style="width:15%; text-align: center; color:#000;"></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -71,9 +71,16 @@
 								<td style="text-align: center; color:#000;"><?= tgl_indo($k['tanggal']); ?></td>
 								<td style="color:#000;"><?= $k['keterangan'] ?></td>
 								<td>
+									<?php if (isset($this->session->uid)): ?>
 									<form action="<?= base_url().'download_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
-										<button class="download" type="submit" name="button">Download</button>
+										<button class="download float-left" type="submit" name="button"><i class="fas fa-file-download"></i></button>
 									</form>
+									<?php endif; ?>
+									<?php if ($this->session->status == '1'): ?>
+										<form action="<?= base_url().'delete_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
+											<button class="delete float-left" type="submit" onclick="return confirm('Yakin Ingin Hapus?');" name="button"><i class="fas fa-trash"></i></button>
+										</form>
+									<?php endif; ?>
 								</td>
 							</tr>
 						<?php endforeach; ?>

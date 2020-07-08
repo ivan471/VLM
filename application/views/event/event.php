@@ -19,18 +19,16 @@
               <img  src="<?= base_url().'assets/gambar_kegiatan/'.$k['gambar'] ?>" onerror="this.src='<?= base_url('assets/img/not_found.png') ?>'" class="responsive gmbr1">
             </div>
             <div class="card-body">
-              <div style="height:150px;">
+              <div style="height:250px;">
                 <h5 style="color:gray;"><?= date_format(date_create($k['tanggal']),"d M Y"); ?></h5>
                 <!-- <h5><?= $k['tanggal']; ?></h5> -->
-                <p style="color:#000;"><?= substr($k['deskripsi'], 0, 200); ?></p>
+                <p style="color:#000;"><?= substr($k['deskripsi'], 0, 220); ?>[...]</p>
               </div>
               <?php if ($this->session->status == '1'): ?>
-                <a href="<?= base_url().'edit/'.$k['id'] ?>" class="download float-right">Edit</a>
-                <a href="<?= base_url().'hapus/'.$k['id'] ?>" onclick="return confirm('Yakin Ingin Hapus?');" class="delete float-right">Hapus</a>
+                <a href="<?= base_url().'edit/'.$k['id'] ?>" class="download ml-1 float-right"><i class="fas fa-edit"></i></a>
+                <a href="<?= base_url().'hapus/'.$k['id'] ?>" onclick="return confirm('Yakin Ingin Hapus?');" class="delete float-right"><i class="fas fa-trash"></i></a>
               <?php endif; ?>
-              <a href="<?= base_url().'detail/'.$k['id'] ?>" class="float-left">
-                <span class="badge badge-pill badge-dark">Detail</span>
-              </a>
+              <a href="<?= base_url().'detail/'.$k['id'] ?>" class="float-left" >Detail</a>
               </div>
             </div>
           </div>

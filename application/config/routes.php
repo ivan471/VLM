@@ -33,6 +33,7 @@ $route['ubah/(:any)'] 						= 'Admin/ubah/$1';
 $route['belajar'] 								= 'Belajar';
 $route['download_file/(:any)'] 		= 'Belajar/download/$1';
 $route['save'] 										= 'Belajar/save';
+$route['delete_file/(:any)'] 			= 'Belajar/delete_file/$1';
 
 $route['default_controller'] 			= 'VLM';
 $route['404_override'] 						= '';
