@@ -15,7 +15,7 @@
 							Pesan Gagal terkirim. Silakan cek baik - baik.
 						</div>
 					<?php } ?>
-					<form id="form_event" method="post" action="<?= base_url().'simpan' ?>"enctype="multipart/form-data">
+					<form id="form_event" method="post" action="<?= base_url('simpan'); ?>" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-sm-2">
 								<label>Pilih Umur</label>
@@ -33,15 +33,20 @@
 									</select>
 								</div>
 							</div>
+						</div>
+						<div class="row">
 							<div class="col-sm-2">
-								<label>Keterangan</label><br><br><br>
-								<label>Gambar</label>
-								<div id="slider-range"></div>
+								<label>Keterangan</label>
 							</div>
 							<div class="col-sm-10">
-								<div id="pilihan" style="display:none">
-								</div>
-								<textarea class="form-control mb-2" name="deskripsi" id="deskripsi" placeholder="Masukkan Keterangan Event" required></textarea>
+								<textarea class="form-control mb-2" name="deskripsi" id="deskripsi" placeholder="Masukkan Keterangan Event"></textarea>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-sm-2">
+								<label>Keterangan</label>
+							</div>
+							<div class="col-sm-10">
 								<input class="mb-2" id="file" type="file" name="foto" accept="image/jpeg, image/x-png"  onchange="readURL(this);"><br>
 							</div>
 						</div>
@@ -49,7 +54,7 @@
 							<img id="blah" src="#" alt="Picture" />
 						</center>
 						<center>
-							<button type="submit" class="save mb-2 mt-2" id="btn_save">Simpan</button>
+							<button type="submit" name="button" class="save mb-2 mt-2" id="btn_save">Simpan</button>
 						</center>
 					</form>
 				</div>

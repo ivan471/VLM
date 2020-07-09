@@ -54,7 +54,8 @@ class Event extends CI_Controller {
 		echo $response;
 	}
 	public function gambar(){
-		//The name of the directory that we need to create.
+		// echo '123';
+		// The name of the directory that we need to create.
 		$directoryName = './assets/gambar_kegiatan/';
 		if(!is_dir($directoryName)){
 			//Directory does not exist, so lets create it.

@@ -21,7 +21,11 @@
             <div class="card-body">
               <div style="height:250px;">
                 <h5 style="color:gray;"><?= date_format(date_create($k['tanggal']),"d M Y"); ?></h5>
-                <p style="color:#000;"><?= substr($k['deskripsi'], 0, 220); ?>[...]</p>
+                <p style="color:#000;"><?= substr($k['deskripsi'], 0, 220); ?>
+                  <?php if (strlen($k['deskripsi'])> '220'): ?>
+                    <a href="<?= base_url().'detail/'.$k['id'] ?>">[...]</a>
+                  <?php endif; ?>
+                </p>
               </div>
               <?php if ($this->session->status == '1'): ?>
                 <a href="<?= base_url().'edit/'.$k['id'] ?>" class="download ml-1 float-right"><i class="fas fa-edit"></i></a>
