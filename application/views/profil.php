@@ -28,9 +28,26 @@
 				<div class="card">
 					<div class="card-body">
 						<form class="" action="<?= base_url().'upload/'.$profil['id_user'] ?>" method="post" enctype="multipart/form-data">
-							<label for="">Upload Gambar Profil</label>
+							<label for="">Upload Gambar Profil</label><br>
 							<input type="file" id="upload" name="gambar" required>
 							<button type="submit" name="button" class="save">Upload</button>
+						</form>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<form class="" action="<?= base_url().'vlm/ganti/'.$this->session->uid ?>" method="post" enctype="multipart/form-data">
+							<label for="">Ganti Password</label><br>
+							<?php if ($hasil == '1'): ?>
+								<div class="alert alert-success mt-5" role="alert">
+									Password Anda Berhasil Diubah
+								</div>
+							<?php endif; ?>
+							<label for="">Password Baru</label>
+							<input class="form-control mb-1" type="password" name="pass1" required>
+							<label for="">Password Baru Konfirmasi</label>
+							<input class="form-control mb-1" type="password" name="pass2" required><br>
+							<button type="submit" name="button" class="save">Simpan</button>
 						</form>
 					</div>
 				</div>

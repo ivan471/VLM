@@ -11,9 +11,11 @@ class Admin extends CI_Controller {
 	public function index(){
 		if ($this->session->status == '1') {
 			$this->model_user->tambah_umur();
-			$data['judul'] = "List Admin";
-			$data['list'] = $this->model_user->data_admin();
-			$data['admin'] = $this->model_user->admin();
+			$data = [
+				'admin' => $this->model_user->admin(),
+				'list' => $this->model_user->data_admin(),
+				'judul'=>'List Admin'
+			];
 			$this->load->template('admin/list_admin', $data);
 		}
 	}

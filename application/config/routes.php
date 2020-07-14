@@ -3,6 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //User
 $route['login_page'] 							= 'VLM/login_page';
+$route['lupa-password-page'] 					= 'VLM/lupa_password';
+$route['change-password-page/(:any)'] 					= 'VLM/change_password/$1';
+$route['get_link'] 								= 'VLM/send';
 $route['register_page'] 					= 'VLM/register_page';
 $route['sign_in']						 			= 'VLM/signin';
 $route['req'] 										= 'VLM/req';

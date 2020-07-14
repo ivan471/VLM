@@ -11,9 +11,11 @@ class Belajar extends CI_Controller {
 		require APPPATH.'libraries/phpmailer/src/SMTP.php';
 	}
 	public function index(){
-		$data['pesan'] ="0";
-		$data['judul'] = "Belajar";
-		$data['files']= $this->model_data->tampilkan_file();
+		$data = [
+			'files' => $this->model_data->tampilkan_file(),
+			'pesan' => "0",
+			'judul'=>'Belajar'
+		];
 		$this->load->template('belajar', $data);
 	}
 	public function save(){
@@ -37,20 +39,26 @@ class Belajar extends CI_Controller {
 					$email = $row['email'];
 					$this->send($email);
 				}
-				$data['pesan']="1";
-				$data['judul'] = "Belajar";
-				$data['files']= $this->model_data->tampilkan_file();
+				$data = [
+					'files' => $this->model_data->tampilkan_file(),
+					'pesan' => "1",
+					'judul'=>'Belajar'
+				];
 				$this->load->template('belajar',$data);
 			}else {
-				$data['pesan']="2";
-				$data['judul'] = "Belajar";
-				$data['files']= $this->model_data->tampilkan_file();
+				$data = [
+					'files' => $this->model_data->tampilkan_file(),
+					'pesan' => "2",
+					'judul'=>'Belajar'
+				];
 				$this->load->template('belajar',$data);
 			}
 		}else{
-			$data['pesan']="3";
-			$data['judul'] = "Belajar";
-			$data['files']= $this->model_data->tampilkan_file();
+			$data = [
+				'files' => $this->model_data->tampilkan_file(),
+				'pesan' => "3",
+				'judul'=>'Belajar'
+			];
 			$this->load->template('belajar',$data);
 		}
 	}

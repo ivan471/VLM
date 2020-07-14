@@ -23,6 +23,15 @@ class Model_user extends CI_Model{
     $query = $this->db->query("SELECT * FROM users WHERE id_user='".$id."'");
     return $query->row_array();
   }
+  public function change_pass($id){
+    $data = array('password' => md5($this->input->post('pass1')));
+    $this->db->where('id_user', $id);
+    $this->db->update('users', $data);
+  }
+  public function get_user($email){
+    $query = $this->db->query("SELECT * FROM users where email='".$email."'");
+    return $query->row_array();
+  }
   public function data_admin(){
     $query = $this->db->query("SELECT * FROM users WHERE status='1'");
     return $query->result_array();

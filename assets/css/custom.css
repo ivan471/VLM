@@ -18,7 +18,7 @@
   color: #B77C7C;
 }
 /* .navbar-dark .navbar-nav .nav-link {
-  color:#000;
+color:#000;
 } */
 .center {
   display: block;
@@ -136,57 +136,66 @@ body{
   border: 1px solid #ddd;
 }
 .download {
-	box-shadow:inset 0px 39px 0px -24px #3dc21b;
-	background-color:#44c767;
-	border-radius:7px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+  box-shadow:inset 0px 39px 0px -24px #3dc21b;
+  background-color:#44c767;
+  border-radius:7px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:6px 25px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
 }
 .download:hover {
-	background-color:#5cbf2a;
+  background-color:#5cbf2a;
 }
 .download:active,.save:active,.delete:active {
   position:relative;
   top:1px;
 }
 .save {
-	box-shadow:inset 0px 39px 0px -24px #54a3f7;
-	background-color:#007dc1;
-	border-radius:7px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #154682;
+  box-shadow:inset 0px 39px 0px -24px #54a3f7;
+  background-color:#007dc1;
+  border-radius:7px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:6px 25px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #154682;
 }
 .save:hover {
-	background-color:#0061a7;
+  background-color:#0061a7;
 }
 .delete {
   box-shadow:inset 0px 39px 0px -24px #c43a2d;
-	background-color:#c62d1f;
-	border-radius:6px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #810e05;
+  background-color:#c62d1f;
+  border-radius:6px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #810e05;
 }
 .delete:hover {
-	background-color:#f24437;
+  background-color:#f24437;
 }
 .navbar-dark .navbar-toggler{
   color: rgba(6, 6, 6, 0.51);
+}
+#lupa-box{
+  margin-bottom: 120px;
+  max-width: 600px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+footer{
+  bottom: 0;
 }
