@@ -9,7 +9,7 @@
 				<h5>Tanggal : <?= date("d M Y"); ?></h5>
 				<h3>Hallo,<?= $nama; ?></h3>
 				<p>Untuk menganti password anda, silakan klik link berikut ini:</p>
-				<a href="<?= base_url('change-password-page/'.$pesan);  ?>" target="_blank">Klik ini.</a>
+				<a href="<?= base_url('change-password-page/'.$pesan);  ?>" target="_blank">Ubah Passwordmu.</a>
 				<p>Terima Kasih.</p>
 			</div>
 		</div>

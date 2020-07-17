@@ -43,6 +43,11 @@
 									Password Anda Berhasil Diubah
 								</div>
 							<?php endif; ?>
+							<?php if ($hasil == '2'): ?>
+								<div class="alert alert-danger mt-5" role="alert">
+									Password Tidak Sama
+								</div>
+							<?php endif; ?>
 							<label for="">Password Baru</label>
 							<input class="form-control mb-1" type="password" name="pass1" required>
 							<label for="">Password Baru Konfirmasi</label>

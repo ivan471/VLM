@@ -118,6 +118,14 @@ class VLM extends CI_Controller {
 				'judul'=>'Profil'
 			];
 			$this->load->template('profil', $data);
+		}else {
+			$this->model_user->change_pass($id);
+			$data = [
+				'profil' => $this->model_user->profil($id),
+				'hasil' => '2',
+				'judul'=>'Profil'
+			];
+			$this->load->template('profil', $data);
 		}
 	}
 	function changepass($id){
@@ -164,8 +172,8 @@ class VLM extends CI_Controller {
 		// $mail->SMTPDebug = 2;
 		$mail->Username 			= 'viharalahutamaitreya@gmail.com'; // user email
 		$mail->Password 			= 'oitwrjvqvfbazxnr'; // password email
-		$mail->SMTPSecure	 		= 'ssl';
-		$mail->Port     			= 465;
+		$mail->SMTPSecure	 		= 'tls';
+		$mail->Port     			= 587;
 		$mail->setFrom('viharalahutamaitreya@gmail.com', ''); // user email
 		$mail->addAddress($email); //email tujuan pengiriman email
 		// Email subject

@@ -18,7 +18,7 @@
           <form action="<?= base_url().'simpan_pemberitahuan' ?>" method="post">
             <div class="form-group">
               <label for="pemberitahuan">Isi Pemberitahuan</label>
-              <textarea role="3" id="pemberitahuan" class="form-control" name="pemberitahuan" placeholder="Isi Pemberitahuan" required></textarea>
+              <textarea role="3" id="deskripsi" class="form-control" name="pemberitahuan" placeholder="Isi Pemberitahuan" required></textarea>
             </div>
             <button type="submit" class="save" onclick="showPage()">Simpan</button>
           </form>
