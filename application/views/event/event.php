@@ -21,8 +21,8 @@
             <div class="card-body">
               <div style="height:250px;">
                 <h5 style="color:gray;"><?= date_format(date_create($k['tanggal']),"d M Y"); ?></h5>
-                <p style="color:#000;"><?= substr($k['deskripsi'], 0, 220); ?>
-                  <?php if (strlen($k['deskripsi'])> '220'): ?>
+                <p style="color:#000;"><?= substr($k['deskripsi'], 0, 180); ?>
+                  <?php if (strlen($k['deskripsi'])> '180'): ?>
                     <a href="<?= base_url().'detail/'.$k['id'] ?>">[...]</a>
                   <?php endif; ?>
                 </p>
