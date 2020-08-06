@@ -54,7 +54,7 @@
 			</div>
 		<?php endif; ?>
 		<div class="shadow card mt-3">
-			<div class="card-body">
+			<div class="card-body table-responsive">
 				<table class="table table-sm table-bordered table-hover toggle-circle" data-page-size="10">
 					<thead>
 						<tr>
@@ -71,7 +71,7 @@
 								<td style="text-align: center; color:#000;"><?= tgl_indo($k['tanggal']); ?></td>
 								<td style="color:#000;"><?= $k['keterangan'] ?></td>
 								<td>
-									<?php if (isset($this->session->uid)): ?>
+									<?php if (!isset($this->session->uid)): ?>
 									<form action="<?= base_url().'download_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
 										<button class="download float-left" type="submit" name="button"><i class="fas fa-file-download"></i></button>
 									</form>
