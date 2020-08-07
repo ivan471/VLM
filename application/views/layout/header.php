@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
   <link rel="stylesheet" href="<?= base_url('assets/css/responsive.css') ?>">
   <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
-  <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
   <script src="<?= base_url('assets\plugins\tinymce\tinymce.min.js') ?>"></script>
   <script>tinymce.init({ selector:'#deskripsi' });</script>
   <title><?= $judul; ?></title>

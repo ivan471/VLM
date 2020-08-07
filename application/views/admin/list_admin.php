@@ -5,7 +5,7 @@
 				<div class="card-header">
 					<h3>List Admin</h3>
 				</div>
-				<div class="card-body">
+				<div class="card-body table-responsive">
 					<table class="table table-striped">
 						<thead>
 							<tr>
