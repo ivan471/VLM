@@ -6,7 +6,7 @@
 					<div class="col-md-4">
 						<img src="<?= base_url().'assets/profil/'.$profil['gambar'] ?>" class="card-img" alt="...">
 					</div>
-					<div class="col-md-4 mt-2 pl-3">
+					<div class="col-sm-3 mt-2 pl-3">
 						<h5 class="card-title">Nama Lengkap</h5>
 						<h5 class="card-title">E-mail</h5>
 						<h5 class="card-title">Tanggal Lahir</h5>
@@ -15,7 +15,7 @@
 						<h5 class="card-title">Jenis Kelamin</h5>
 						<h5 class="card-title">Nomor WA</h5>
 					</div>
-					<div class="col-md-4 mt-2">
+					<div class="col-sm-4 mt-2">
 						<h5 class="card-title">: <?= $profil['nama']; ?></h5>
 						<h5 class="card-title">: <?= $profil['email']; ?></h5>
 						<h5 class="card-title">: <?= tgl_indo($profil['tgl_lahir']); ?></h5>

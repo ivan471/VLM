@@ -71,9 +71,11 @@
 								<td style="text-align: center; color:#000;"><?= tgl_indo($k['tanggal']); ?></td>
 								<td style="color:#000;"><?= $k['keterangan'] ?></td>
 								<td>
-									<form action="<?= base_url().'download_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
-										<button class="download float-left" type="submit" name="button"><i class="fas fa-file-download"></i></button>
-									</form>
+									<?php if (isset($this->session->uid)): ?>
+										<form action="<?= base_url().'download_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
+											<button class="download float-left" type="submit" name="button"><i class="fas fa-file-download"></i></button>
+										</form>
+									<?php endif; ?>
 									<?php if ($this->session->status == '1'): ?>
 										<form action="<?= base_url().'delete_file/'.$k['id_file'] ?>" method="post" enctype="multipart/form-data">
 											<button class="delete float-left" type="submit" onclick="return confirm('Yakin Ingin Hapus?');" name="button"><i class="fas fa-trash"></i></button>
@@ -102,7 +104,7 @@
 </div>
 <script type="text/javascript">
 function showPage() {
-  document.getElementById("loader").style.display = "block";
+	document.getElementById("loader").style.display = "block";
 }
 function ValidateSize(file) {
 	var modal = document.getElementById('modal_notif_error');
@@ -117,10 +119,10 @@ function tutup(){
 </script>
 <?php
 function tgl_indo($tanggal){
-  $bulan = array ( 1 =>   'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
-  $pecahkan = explode('-', $tanggal);
-  // variabel pecahkan 0 = tanggal
-  // variabel pecahkan 1 = bulan
-  // variabel pecahkan 2 = tahun
-  return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+	$bulan = array ( 1 =>   'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
+	$pecahkan = explode('-', $tanggal);
+	// variabel pecahkan 0 = tanggal
+	// variabel pecahkan 1 = bulan
+	// variabel pecahkan 2 = tahun
+	return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
 } ?>
